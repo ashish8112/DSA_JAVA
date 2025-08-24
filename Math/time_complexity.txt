@@ -1,0 +1,8 @@
+                        Time Complexity
+
+Whenever any number is getting divided by any number ex
+num/10 in loop => time complexity 0(log10(n))
+number/2 in loop => time complexity 0(log2(n))
+
+Remeber: if number is divisible time complexity will lograthimic not 0(n)
+
