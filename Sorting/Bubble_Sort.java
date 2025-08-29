@@ -12,7 +12,7 @@ public class Bubble_Sort {
         }
         for(int i=0;i<n;i++)
         {
-            for(int j=0;j<n-i-1;j++)
+            for(int j=0;j<n-i-1;j++) // On first loop most largest element will be in the end. and then like that second largest in second last position in second loop.
             {
                 if(arr[j]>arr[j+1])
                 {
