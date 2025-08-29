@@ -7,7 +7,7 @@ public class Binary_Search {
         int start_ptr=0;
         int end_ptr=arr.length-1;
         int mid;
-        while(start_ptr<=end_ptr)
+        while(start_ptr<=end_ptr) // we use mid -1 or mid +1 because if we use high=mid or low=mid sometime it will create infinite loop like take arr of sz 5 and search element of 4th index or last .
         {
             mid=(start_ptr+end_ptr)/2;
             if(target==arr[mid]) {
