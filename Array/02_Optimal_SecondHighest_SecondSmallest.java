@@ -7,6 +7,8 @@ import java.util.Scanner;
     {
         int max=Integer.MIN_VALUE;
         int s_max = Integer.MIN_VALUE; // second largest
+        if(arr.length<2)
+            return -1;
         for(int i=0;i<arr.length;i++)
         {
             if(arr[i]>max)

@@ -1,8 +1,10 @@
+package DSA.College_Lab;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class DummyLoginRegister {
+ public class chatGPT {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> new LoginPage());

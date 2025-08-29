@@ -1,3 +1,5 @@
+package DSA.College_Lab;
+
 import javax.swing.*;
 import java.awt.event.*;
 class Demo{
@@ -8,9 +10,9 @@ JButton button = new JButton("Click Me");
 
 button.addActionListener(new ActionListener(){
 public void actionPerformed (ActionEvent e){
-JOptionPane.show.MessageDialog(frame,"Button Clicked!");
+JOptionPane.showMessageDialog(frame,"Button Clicked!");
 }
-}
+});
 frame.add(button);
 frame.setSize(300,200);
 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
