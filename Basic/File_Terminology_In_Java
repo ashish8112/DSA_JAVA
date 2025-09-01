@@ -1,0 +1,278 @@
+                        OOPS
+
+                            **source file concept **
+
+*In java we cannot create two public class in same source file .
+
+*If a Java source file contains only one class, and that class contains the main method, it is not strictly necessary to declare this class as public. 
+If the public modifier is omitted(exclude or not written), the class will have default (package-private) access.
+This means it can only be accessed by other classes within the same package.
+
+**If the class name and source file name are the same but the class is not public, 
+it will compile and run normally — Java doesn’t require a name match unless the class is public.
+
+**If I create a souce file with Name OOPs and class name with ashish only no any access modifier than it will work fine 
+(until** the class name is not public) else it will show compilitation Error: class ashish is public, should be declared in a file named ashish.java
+*** ..
+    ->we compile that source file with that source name but we need to run with class name .--> javac Oops.java --> java ashish
+
+
+    **Reason Java Enforces the rule **
+
+    When you compile a Java file:
+        1.One .class file per class ,Every class you write gets compiled into its own .class bytecode file.
+
+            public class Ashish { }
+            class Test { }
+
+        → Compiling Ashish.java produces: 2 byte code with its own class name 
+                *Ashish.class
+                *Test.class
+
+        2.If a file has a public class, its name must match the file name exactly (case-sensitive).
+            A public class means “I am visible everywhere” (even from other packages).
+
+            Without the rule — chaos in locating classes
+            * The JVM loads classes by name (e.g., java ashish means: “find ashish.class”).
+            * If public class ashish were inside a file named Oops.java, it would be confusing:
+            * Where should the compiler look for ashish?
+            * How would tools like IDEs, build systems, or other codebases know where to find it
+
+**** Note : If a file has a public class, its name must match the file name exactly (case-sensitive).
+            else don't make it public. 
+
+
+**** Note : A non-public class can be accessed from another source file only if both are in the same package.
+            This is because non-public classes have package-private access by default.
+            By default, a class has package-private access, meaning it’s accessible only within the same package.
+
+
+                
+                ** Approach of Java - Top to Down **
+
+Java follows a top-down approach in program execution — it starts from the main method and executes statements sequentially, 
+            though methods can be called in any order
+
+Note :In Java, the order of class definitions in a source file doesn’t matter because the compiler reads the whole file before generating bytecode.
+
+The “top-down approach” in Java doesn’t mean you must write code physically from top to bottom — 
+it means the program execution flow starts from the top-level entry point (main) and goes step-by-step through the instructions and method calls.
+
+Class or method definitions can be placed anywhere; the compiler processes them all before execution.
+
+
+                **Keyword - this **
+
+this is a reference variable in every non-static method that refers to the current object on which the method was called.
+
+Note: ** 1. When a constructor or method parameter has the same name as an instance variable (your “class variable”), 
+        the parameter overrides the instance variable inside that method/constructor’s scope.
+
+        2.If you directly use the variable name inside the method, Java will refer to the parameter (local variable) — not the instance variable.
+
+        3.To access the instance variable in this situation, you must use the this keyword → this.variableName
+
+        Context : TestPen.Java
+
+
+In simple my words -> Whenever i am calling a variable of class from main function it will print value of class variable althouh the variable name is 
+        same in constructor/method  parameter and note variable name will be override inside the method or constructor if the name of 
+        variable is same as class variable name and if you call variable inside the constructor or method it will print method variable 
+        to use class variable we use this keyword
+
+        Context : TestPen.Java
+
+                                    *When it is useful?*
+        
+       1. **Distinguishing instance variables(literal of class variable or value which assigned in class variable) from parameters(from where sending values)
+
+        class Pen {
+                    int color;
+                    Pen(int color) {
+                    this.color = color; // 'this.color' is instance variable(color variable which is already inside the class above one),
+                    'color' is parameter(values which receive from calling expression)
+                    }
+                    // so if i print color in this function class *color variable* will print and we have assigned value in it using parameter.
+                }
+
+       2. ** Calling another constructor in the same class
+
+Sometimes, you have multiple constructors in a class that initialize objects in different ways, but part of the initialization code is the same. 
+    Instead of repeating code, you can make one constructor call another.
+
+       
+        ***Rules ***
+        1.this() must be the first statement in the constructor.
+        2.It calls another constructor in the same class.
+        3.You can pass arguments to it.
+
+            Example 1. Without this() (code repetition)
+
+                class Pen {
+                    int color;
+                    int price;
+
+                    Pen() {
+                        color = 1;
+                        price = 10;
+                    }
+
+                    Pen(int price) {
+                        color = 1; // repeated , because if don't write the value inside color only this constructor is called and there would be nothing inside color
+                        this.price = price;
+                    }
+                }
+
+                public class TestPen {
+                    public static void main(String[] args) {
+                        // Create Pen Obj using default constructor
+                        Pen p1 = new Pen();
+                        System.out.println("Pen1 color = " + p1.color + ", price = " + p1.price);
+
+                        // Create Pen Obj using parameterized constructor
+                        Pen p2 = new Pen(25);
+                        System.out.println("Pen2 color = " + p2.color + ", price = " + p2.price);
+                    }
+                }
+
+                Context : TestPen.java 
+
+        2. With this() (no repetition) // we can call constructor **using this() ** or this (arguments)
+
+                            class pen{
+                    int color;
+                    int price;
+                    pen()
+                    {
+                        System.out.println("hello world");
+                        System.out.println(color+" color of default constructor"); // output will 0 as java stores 0 as default.
+                    }
+                    pen (int color)
+                    {
+                        this();
+                        this.color=color;
+                    
+
+                    }
+                }
+                public class constructor {
+                    public static void main(String[] args) {
+                        pen obj=new pen(5);
+                        
+                    }
+}
+
+        3. Passing arguments in this()
+                
+                class Pen {
+            int color;
+            int price;
+
+            Pen(int color) {
+                this.color = color;
+                this.price = 10;
+            }
+
+            Pen(int color, int price) {
+                this(color); // calls Pen(int color)
+                this.price = price;
+            }
+        }
+
+
+   ** Note: this() is used inside a constructor to call another constructor in the same class.
+            It helps avoid code duplication and must be the first statement in the constructor.
+            Syntax: this(arguments);
+
+    
+
+
+                    **How to use print or println **
+    
+    we can use print and println in several ways 
+
+    1.System.out.println("color = "+color);
+    2.System.out.println(color+ "= color");
+
+    **Multiple values 
+    1. System.out.println(color+"= color"+price+ "= price and age = "+age);
+
+    ** Printf and print or prinln difference 
+    Imp---> If you do "text" + variable inside printf, it acts like print/println.
+            To use printf for its real purpose, use format specifiers like %d, %s, etc., and pass variables as arguments.
+
+
+
+
+                    **** Method with Same Class Type as Parameter in Java ****
+
+In Java and c++ , after a class is defined, its class name becomes a valid data type.
+This means we can create methods that take an object of the same class as a parameter.
+
+                    public class Oops{
+                    int color;
+                    Oops add(Oops x)
+                    {
+                        System.out.println("hello world");
+                        return x;
+                    }
+                    void show() {
+                        System.out.println("Color = " + color);
+                    }
+
+                        public static void main(String[] args) {
+                        Oops obj=new Oops();
+                        obj.color=1;
+                        obj.show();
+                        Oops obj2=obj.add(obj);
+                        }
+                    }
+
+
+Note : If your method name is the same as the class name and you want it to return void, 
+you simply add void as the return type — but then it will no longer be a constructor, it will just be a normal method.
+
+                class ClassName {
+                    ClassName methodName(ClassName parameterName) {
+                        // method body
+                        return ...; // can return same type or void
+                    }
+                }
+
+                    *******and if you want to return nothing then use void or write only return; ******
+
+                            class Ashish {
+
+                                // Method with same name as class, returning void
+                                void Ashish(Ashish x) {
+                                    System.out.println("Hello World");
+                                }
+                            }
+
+                            public class Main {
+                                public static void main(String[] args) {
+                                    Ashish obj = new Ashish();   // Calls constructor (not the method above)
+                                    obj.Ashish(obj);             // Calls method named Ashish that returns void
+                                }
+                            }
+
+
+        Key Points :
+        1.A constructor has no return type at all (not even void).
+        2.A method (even if it has the same name as the class) must have a return type — void means it returns nothing.
+********3.To “return void” in Java, you actually just don’t return anything inside the method, or use return; with no value.
+
+
+                            Why do we need it ?
+
+1.Compare two objects
+2.Copy data from one object to another
+3.Merge or combine object data
+4.Build method chains (fluent API style)
+
+        Conclusion -> A class can have methods that take its own type as a parameter because the class name acts like a data type. 
+                        This is common in Java when objects interact, compare, or share data.
+
+
+
+
