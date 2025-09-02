@@ -20,6 +20,16 @@ button1.addActionListener(new ActionListener() {
             } 
         });
 JButton button2= new JButton("Register");
+    button2.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            SwingUtilities.invokeLater(() -> {
+                new StudentRegistration().setVisible(true);
+            });
+            frame.dispose(); // close login window (optional)
+        }
+    });
+
+
 frame.add(label1);
 frame.add(username);
 frame.add(label2);
