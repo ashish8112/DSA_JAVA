@@ -9,7 +9,7 @@ package DSA.Basic.ExceptionHandling;
         //An exception occurs in finally block
         //The death of thread.
 public class Third {
-    public static void main(String [] args)
+    public static void main(String [] args) // showcase of finally Keyword.
     {
         int [] arr= new int[5];
 //        try{

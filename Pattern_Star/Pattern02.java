@@ -1,6 +1,6 @@
-package DSA;
+package DSA.Pattern_Star;
 
-public class pattern2 {
+public class Pattern02 {
     public static void main(String[] args) {
         for(int i=0;i<5;i++) {
             for (int j = 0; j <= i; j++) {
@@ -8,7 +8,5 @@ public class pattern2 {
             }
             System.out.println("");
         }
-
     }
-
 }

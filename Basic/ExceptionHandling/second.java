@@ -14,8 +14,8 @@ public class second {
 //            System.out.println(e.getCause());
 //            System.out.println(e); // This will show type of exception
 //        }
-//        catch(Exception | ArithmeticException e) // Insted of writing two catch block we can use pipe and we can use class and sublcass in same catch block
-                                                // becuase every exception is sub class of Exception Class.
+//        catch(Exception | ArithmeticException e) // Instead of writing two catch block we can use pipe and we can use class and subclass in same catch block
+                                                // because every exception is subclass of Exception Class.
         catch(ArrayIndexOutOfBoundsException | ArithmeticException e) // Use pipe for multiple exception
 //                NullPointerException , RuntimeException
         {

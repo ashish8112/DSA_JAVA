@@ -1,6 +1,6 @@
 package DSA.Pattern_Star;
 import java.util.*;
-public class Pattern_3 {
+public class Pattern_All {
     static void pattern01(int n)
     {
         for(int i=0;i<n;i++)
@@ -349,9 +349,6 @@ public class Pattern_3 {
                 int n;
                 n=sc.nextInt();
                 pattern21(n);
-
             }
-
-
         }
     }
