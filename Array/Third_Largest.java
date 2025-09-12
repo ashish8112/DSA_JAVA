@@ -1,6 +1,6 @@
 package DSA.Array;
 import java.util.*;
-class third_largest {
+class Third_Largest {
     static void third_largest(int [] arr)
     {
        int max,s_max,t_max;
@@ -16,6 +16,7 @@ class third_largest {
             }
             else if(arr[i]>s_max&&arr[i]<max)
             {
+                t_max=s_max;
                 s_max=arr[i];
             }
             else if(arr[i]>t_max&&arr[i]<s_max)
