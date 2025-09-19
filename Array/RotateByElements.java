@@ -3,7 +3,7 @@ package DSA.Array;
 import java.util.Scanner;
 
 public class RotateByElements {
-    static void leftRotate(int [] arr,int k)
+    static void leftRotateByK(int [] arr,int k)
     {
         // 1. In this approach I am moving the k(rotate or 2,3etc ) element from beginning to temp array
         // and then moving all remaining element to the beginning of my actual array .
@@ -45,6 +45,6 @@ public class RotateByElements {
         }
         System.out.println("Enter the element to be rotated from right");
         int rotate=sc.nextInt();
-        leftRotate(arr,rotate);
+        leftRotateByK(arr,rotate);
     }
 }
