@@ -8,7 +8,7 @@ public class Reverse_Integer {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the Number to reverse ");
         int number = sc.nextInt();
-        for (; number != 0; ) {
+        while (number != 0) {
             int digit = number % 10;
             remainder = remainder * 10 + digit;
             number /= 10;

@@ -12,7 +12,7 @@ public class PrintAllDivisor {
             if (number % i == 0) {// eg : 16-> (Divisor,Quotient) (1,16) , (2,8), (4,4) so 1,2,4,8,16 is divisor of ,16 Notice are only dividing till its sqrt of Number.
                 System.out.println(i);
                 if (i != number/i)
-                    //Here I can print quotient as divisor but exculding (4,4) or (3,3) because they are only one Divisor not two , bcuz one of them is prined above.
+                    //Here I can print quotient as divisor but excluding (4,4) or (3,3) because they are only one Divisor not two , bcuz one of them is printed above.
                     System.out.println(number / i);
             }
         }

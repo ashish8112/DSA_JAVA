@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class PrimeNumber {
     public static void main(String[] args) {
-//  int count=2; //because the sqrt of 2 and 3 is smaller than 2 so loop will not execute and 2 because any number will divisible by itself and 1 so count =2.
         boolean isPrime=true;
         Scanner sc= new Scanner(System.in);
         System.out.println("Enter the Number to check the prime Number ");
@@ -13,10 +12,8 @@ public class PrimeNumber {
         {
             if(number%i==0)
             {
-//              count=count+1;
                 isPrime=false;
               break;
-
             }
 
             }
