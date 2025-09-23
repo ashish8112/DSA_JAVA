@@ -1,0 +1,1 @@
+Note: Size of array in main function or method is 10^6 and as global variable the Size of array is 10^7.

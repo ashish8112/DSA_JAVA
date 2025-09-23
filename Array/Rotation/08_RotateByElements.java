@@ -1,10 +1,10 @@
-package DSA.Array;
+package DSA.Array.Rotation;
 
 import java.util.Scanner;
 
 import static java.lang.System.exit;
 
-public class RotateByElements {
+ class RotateByElements {
     static void leftRotateByK(int [] arr,int k)
     {
         // Approach for left rotation save all k elements from most left or beginning of elements/array .

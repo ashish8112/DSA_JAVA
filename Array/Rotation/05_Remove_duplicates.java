@@ -1,4 +1,4 @@
-package DSA.Array;
+package DSA.Array.Rotation;
 import java.util.*;
  class Remove_duplicates {
      static void removeDuplicates(int [] arr)
