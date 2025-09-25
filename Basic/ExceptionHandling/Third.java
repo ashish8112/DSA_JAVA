@@ -1,8 +1,8 @@
 package DSA.Basic.ExceptionHandling;
 
-//Use of finally keyword . it is used with try only or try and myltiple or single catch
-//finally block execute code whethere there is exception or not .it will run anyhow.
-//There will be only one finally block
+//Use of finally keyword . it is used with try only or try and multiple or single catch
+//finally block execute code whether there is exception or not .it will run anyhow.
+//There will be only one finally block in one program.
 //We use finally block to close operation for connection to file or closing a file. etc.
 //There are some cases when a finally block does not execute .
         //Use of System.exit() method
@@ -29,7 +29,7 @@ public class Third {
         } finally { // Note we can use only one finally block.
             System.out.println("I will run any how ");
         }
-        System.out.println("Hello");//Becuase of Unhandled exception this code block will not run but finally block will run
+        System.out.println("Hello");//Because of Unhandled exception this code block will not run but finally block will run
 
     }
 }
