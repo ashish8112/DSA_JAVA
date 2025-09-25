@@ -12,9 +12,9 @@ public class first {
         // We can use multiple exception in program . Exception is class and e is its object which have various methods.
         // like e.getMessagae() // It shows which kind of exception it is .
         catch(ArithmeticException e) //This exception will not execute because whenver you are getting exception in first line our compiler break from try.
-                // Prints that exception .
+                // Prints that exception becuase first exception is array index of bound as we are assigning on 7th position[6] in [5] .
         {
-            System.out.println("You can't access it  becuase of exception ");
+            System.out.println("You can't access it  because of exception ");
     }
         catch(Exception e) // we must give generic or exact exception name to execute catch and Exception is parent of every exception it can handle any
                             // any exception .

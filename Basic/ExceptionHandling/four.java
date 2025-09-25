@@ -1,5 +1,5 @@
 package DSA.Basic.ExceptionHandling;
-// The thorw keyword is used to explicitly throw a single exception
+// The throw keyword is used to explicitly throw a single exception
 // In simple word I can create my own Exception in program
 // TO use throw keyword either use try , catch or in function declaration declares throws exception
 
@@ -31,10 +31,16 @@ public class four {
 
        }
 }
-class MyException extends Exception{ // But i Need to inherit the parent class of all exception which is a Exception
-    public MyException(String Message)
+class MyException extends Exception{ // But I Need to inherit the parent class of all exception which is an Exception
+    public MyException(String Message)// Constructor
     {
-        super(Message);// This message will pass to its parnet class Exception from there we can print exception
+        super(Message);// This message will pass to its parent class Exception from there we can print exception
+
+
+        //Note: super keyword calls the constructor of parent class and super keyword must be first statement of subclass.
+        // Note: when we create the object of subclass automatic default constructor of parent class is invoked.||Implicit Invocation.
+        // but if there is parameterized constructor and default constructor and the subclass doesn't call a parameterized parent
+        // constructor, a compilation error will occur.
     }
 }
 
