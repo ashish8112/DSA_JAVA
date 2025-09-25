@@ -38,6 +38,7 @@ class MyException extends Exception{ // But I Need to inherit the parent class o
 
 
         //Note: super keyword calls the constructor of parent class and super keyword must be first statement of subclass.
+        //Rule: super() is always first line of  constructor.
         // Note: when we create the object of subclass automatic default constructor of parent class is invoked.||Implicit Invocation.
         // but if there is parameterized constructor and default constructor and the subclass doesn't call a parameterized parent
         // constructor, a compilation error will occur.
