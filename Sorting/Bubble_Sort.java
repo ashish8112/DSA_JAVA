@@ -36,7 +36,7 @@ public class Bubble_Sort {
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
         int n;
-        n = sc.nextInt();
+        n = sc.nextInt();// size of array will pass to bubble sort method.
         for (int i = 1; i <= n; i++) {
             int number;
             number = sc.nextInt();
