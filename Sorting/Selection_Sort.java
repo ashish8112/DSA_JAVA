@@ -8,15 +8,15 @@ class Selection_Sort {
     {
         for(int i=0;i<arr.length-1;i++)
         {
-            int min=i;
+            int k=i; // k=0 for first time because we have to shift smallest in first palace so k will stop there where smallest value is.
             for(int j=i+1;j<arr.length;j++)
             {
-                if(arr[j]<arr[min])
-                    min=j;
+                if(arr[j]<arr[k])
+                    k=j;
             }
-            int temp=arr[min];
-            arr[min]=arr[i];
-            arr[i]=temp;
+            int temp=arr[k];
+            arr[k]=arr[i];
+            arr[k]=temp;
         }
     }
     public static void main (String [] args)

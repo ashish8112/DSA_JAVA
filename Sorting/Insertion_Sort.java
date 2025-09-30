@@ -1,7 +1,11 @@
 package DSA.Sorting;
 
 import java.util.Scanner;
-
+// In insertion sort when we found an element to be small then previous element then we will swap that element to left till
+// it is bigger than previous element.
+// ex-> 12 13 15 10 8 6
+// when i = 4 and j=4 now arr[j-1]>arr[j] so we will start swap(arr[j-1],arr[j]) till j-1!> j so it will not loose order of
+// any element as well we can swap the smallest element.
 public class Insertion_Sort {
     static void insertionSort(int [] arr)
     {

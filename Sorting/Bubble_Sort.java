@@ -1,6 +1,12 @@
 package DSA.Sorting;
 import java.util.*;
 public class Bubble_Sort {
+//Bubble sort means select consecutive two elements from beginning to end like 0 1 , 1 2 , 2 3 and so on till end
+// If previous element is larger than this element for like 2th position element is larger than 3th  position then swap them .
+// so we will get the most largest element by end of loop on the end position using swapping
+// Every largest will go in end in complete of one entire loop like most largest , second largest that's how and so we need
+// to run our outer loop for total number of elements in the array and // inner loop must be decreasing by 1 always because
+// during every outer loop last element got it's right position according to sorting. so run inner loop j<n-i;
 
     static void bubbleSort(int n)
     {
