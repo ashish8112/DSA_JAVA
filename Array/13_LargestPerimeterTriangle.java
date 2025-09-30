@@ -13,7 +13,7 @@ import java.util.Scanner;
 //so my approach is to sort entire array in descending order like for (2,1,2)
 //->2,2,1
 //I have sorted array in descending because I need to send largest perimeter so it can be found from first three element and  if it is then there is no need to
-//check all elements till end .
+//check all elements till end or all triplet because perimeter of largest 3 element will be always from all largest elements.
 //because if in first 3 element it is possible to create the triangle then , that would be the largest perimeter of triangle because that 3 elements are
 //largest among all the remaining elements in the array.
 //note because of descending sorting
