@@ -12,7 +12,7 @@ public class Insertion_Sort {
         int j;
         for(int i=1;i<arr.length;i++)
         {
-            j=i;
+            j=i;// j will start from i because previous element were sorted in ascending order already.
             while(j>=1&&arr[j-1]>arr[j])
             {
                 int temp=arr[j-1];

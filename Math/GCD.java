@@ -18,11 +18,11 @@ public class GCD {
             while(remainder!=0)
             {
                 remainder=a%b;
-                a=b;
                 if(remainder==0)
                 {
                     break;
                 }
+                a=b;
                 b=remainder;
             }
             System.out.println("GCD of Number is "+b);
