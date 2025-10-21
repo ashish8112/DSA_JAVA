@@ -19,7 +19,7 @@ public class StringTest {
          heap memory
          String is class so the variable of string will be stored in heap memory
         but trick is that if we create variable using new keyword it will store in two different
-        address although the same literal
+        address although the same literal/value
          but Java give us functionality to create the variable of string without new keyword
          and that values will store in string pool and if 2 or more variable have same literal
          java will not create 2 or 3 address for them it will point to first address of variable
