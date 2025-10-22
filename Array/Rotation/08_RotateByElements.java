@@ -46,13 +46,13 @@ import static java.lang.System.exit;
         k=k%arr.length;
         int [] temp= new int [k];
         //storing k element from most right of array in temp array.
-        for(int i=arr.length-k;i<arr.length;i++)  //for(int i=0;i<k;i++)
+        for(int i=arr.length-k;i<arr.length;i++)  //for(int i=0;i<k;i++)// if k=4 , for 7 element we took 4 element
             temp[i-(arr.length-k)]=arr[i];            //temp[i]=nums[i+nums.length-k];
 
         // replacing the values of array from left to right of remaining elements after removing k elements above.
         //like k=3 means 3 elements from last copied temp and now 4 elements from left need to shift right.
         // i=6 for ttl 7 elements arr[6]=arr[6-3] so in 6th position -> 3rd value , 5th-> 2 , 4th-> 1, 3rd -> 0th value.
-        for(int i=arr.length-1;i>=k;i--) // for(int i=0;i<nums.length-k;i++)
+        for(int i=arr.length-1;i>=k;i--) // for(int i=0;i<nums.length-k;i++) // if k=4 for 7 element we fix  7-4 = 3 element.
         {
             arr[i]=arr[i-k];                         //nums[arr.length-1-i]=nums[i];
         }
