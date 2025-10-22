@@ -23,9 +23,9 @@ import static java.lang.System.exit;
         {
             temp[i]=arr[i];
         }
-        for(int i=k;i<arr.length;i++)
+        for(int i=k;i<arr.length;i++) // for(int i=0;i<arr.length-k;i++)
         {
-            arr[i-k]=arr[i];
+            arr[i-k]=arr[i];            //arr[i]=arr[i+k];
         }
         for(int i=arr.length-k;i<arr.length;i++)
         {
