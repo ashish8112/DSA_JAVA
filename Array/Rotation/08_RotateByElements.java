@@ -52,9 +52,9 @@ import static java.lang.System.exit;
         // replacing the values of array from left to right of remaining elements after removing k elements above.
         //like k=3 means 3 elements from last copied temp and now 4 elements from left need to shift right.
         // i=6 for ttl 7 elements arr[6]=arr[6-3] so in 6th position -> 3rd value , 5th-> 2 , 4th-> 1, 3rd -> 0th value.
-        for(int i=arr.length-1;i>=arr.length-k-1;i--) // for(int i=nums.length-1;i>=k;i--)
+        for(int i=arr.length-1;i>=k;i--) // for(int i=0;i<nums.length-k;i++)
         {
-            arr[i]=arr[i-k];                         //nums[i]=nums[i-k];
+            arr[i]=arr[i-k];                         //nums[arr.length-1-i]=nums[i];
         }
         for(int i=0;i<k;i++)
             arr[i]=temp[i];

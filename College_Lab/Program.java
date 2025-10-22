@@ -90,7 +90,7 @@ class Child extends Parent
 
 }
 
-public class MultiLevelInheritanceDemo
+ class MultiLevelInheritanceDemo
 {
 	public static void main(String[] args)
 	{
