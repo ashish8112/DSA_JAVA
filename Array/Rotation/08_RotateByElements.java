@@ -47,7 +47,7 @@ import static java.lang.System.exit;
         int [] temp= new int [k];
         //storing k element from most right of array in temp array.
         for(int i=arr.length-k;i<arr.length;i++)  //for(int i=0;i<k;i++)
-        temp[i-(arr.length-k)]=arr[i];            //temp[i]=nums[i+nums.length-k];
+            temp[i-(arr.length-k)]=arr[i];            //temp[i]=nums[i+nums.length-k];
 
         // replacing the values of array from left to right of remaining elements after removing k elements above.
         //like k=3 means 3 elements from last copied temp and now 4 elements from left need to shift right.
