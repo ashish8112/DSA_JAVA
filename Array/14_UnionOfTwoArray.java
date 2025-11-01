@@ -12,60 +12,89 @@ class UnionOfTwoArray{
         int i = 0, j = 0, k = 0;
 
         // Traverse both arrays until one of them is completely processed
-        while (i < arr1.length && j < arr2.length) {
-
-            // Special handling for the first element of the union
-            if (k == 0) {
-                if (arr1[i] < arr2[j]) {
-                    // arr1[i] is smallest, add it to temp
-                    temp.add(arr1[i]);
-                    i++;  // move pointer in arr1
-                    k++;  // increase count of elements in temp
-                } else if (arr1[i] == arr2[j]) {
-                    // arr1[i] and arr2[j] are same, add only once
-                    temp.add(arr1[i]);
-                    i++; j++;  // move both pointers forward
-                    k++;
-                } else {
-                    // arr2[j] is smallest, add it to temp
-                    temp.add(arr2[j]);
-                    j++;  // move pointer in arr2
-                    k++;
-                }
-            }
-            // Handling remaining elements after first element
-            else {
-                if (arr1[i] < arr2[j] && arr1[i] != temp.get(k - 1)) {
-                    // arr1[i] is smaller than arr2[j] and not a duplicate → add it
-                    temp.add(arr1[i]);
-                    i++; k++;
-                } else if (arr1[i] > arr2[j] && arr2[j] != temp.get(k - 1)) {
-                    // arr2[j] is smaller than arr1[i] and not a duplicate → add it
-                    temp.add(arr2[j]);
-                    j++; k++;
-                } else if (arr1[i] < arr2[j] && arr1[i] == temp.get(k - 1)) {
-                    // arr1[i] is smaller but same as last added element → skip duplicate
-                    i++;
-                } else if (arr1[i] > arr2[j] && arr2[j] == temp.get(k - 1)) {
-                    // arr2[j] is smaller but already in temp → skip duplicate
-                    j++;
-                } else if (arr1[i] == arr2[j] && arr1[i] != temp.get(k - 1)) {
-                    // arr1[i] and arr2[j] are equal and not duplicate → add once
-                    temp.add(arr1[i]);
-                    i++; j++; k++;  // move both pointers forward and increase count
-                } else if (arr1[i] == arr2[j] && arr1[i] == temp.get(k - 1)) {
-                    // arr1[i] and arr2[j] are equal but already in temp → skip both
-                    i++; j++;
-                }
-            }
-        }
+//        while (i < arr1.length && j < arr2.length) {
+//
+//            // Special handling for the first element of the union
+//            if (k == 0) {
+//                if (arr1[i] < arr2[j]) {
+//                    // arr1[i] is smallest, add it to temp
+//                    temp.add(arr1[i]);
+//                    i++;  // move pointer in arr1
+//                    k++;  // increase count of elements in temp
+//                } else if (arr1[i] == arr2[j]) {
+//                    // arr1[i] and arr2[j] are same, add only once
+//                    temp.add(arr1[i]);
+//                    i++; j++;  // move both pointers forward
+//                    k++;
+//                } else {
+//                    // arr2[j] is smallest, add it to temp
+//                    temp.add(arr2[j]);
+//                    j++;  // move pointer in arr2
+//                    k++;
+//                }
+//            }
+//            // Handling remaining elements after first element
+//            else {
+//                if (arr1[i] < arr2[j] && arr1[i] != temp.get(k - 1)) {
+//                    // arr1[i] is smaller than arr2[j] and not a duplicate → add it
+//                    temp.add(arr1[i]);
+//                    i++; k++;
+//                } else if (arr1[i] > arr2[j] && arr2[j] != temp.get(k - 1)) {
+//                    // arr2[j] is smaller than arr1[i] and not a duplicate → add it
+//                    temp.add(arr2[j]);
+//                    j++; k++;
+//                } else if (arr1[i] < arr2[j] && arr1[i] == temp.get(k - 1)) {
+//                    // arr1[i] is smaller but same as last added element → skip duplicate
+//                    i++;
+//                } else if (arr1[i] > arr2[j] && arr2[j] == temp.get(k - 1)) {
+//                    // arr2[j] is smaller but already in temp → skip duplicate
+//                    j++;
+//                } else if (arr1[i] == arr2[j] && arr1[i] != temp.get(k - 1)) {
+//                    // arr1[i] and arr2[j] are equal and not duplicate → add once
+//                    temp.add(arr1[i]);
+//                    i++; j++; k++;  // move both pointers forward and increase count
+//                } else if (arr1[i] == arr2[j] && arr1[i] == temp.get(k - 1)) {
+//                    // arr1[i] and arr2[j] are equal but already in temp → skip both
+//                    i++; j++;
+//                }
+//            }
+//        }
 
         // If arr1 has remaining elements
+        //optimised version of that code
+        //Note: Add in union only when ith or jth element is smaller or equal and it is not same as previous one
+        while(i<arr1.length&&j<arr2.length)
+        {
+            if(arr1[i]<arr2[j])
+            {
+                if(k==0||arr1[i]!=temp.get(k-1)) {
+//                    temp.add(arr1[i]);
+//                    k++;or
+                    temp.add(k++,arr1[i]);
+                }
+                i++;
+            }
+           else if(arr2[j]<arr1[i])
+            {
+                if(k==0||arr2[j]!=temp.get(k-1))
+                {
+                    temp.add(k++,arr2[j]);
+                }
+                j++;
+            }
+            else if(arr1[i]==arr2[j])
+            {
+                if(k==0||arr1[i]!=temp.get(k-1))
+                {
+                    temp.add(k++,arr1[i]);
+                }
+                i++;j++;
+            }
+        }
         while (i < arr1.length) {
             // Add element if first element or not duplicate
             if (k == 0 || arr1[i] != temp.get(k - 1)) {
-                temp.add(arr1[i]);
-                k++;
+                temp.add(k++,arr1[i]);
             }
             i++;  // move pointer forward
         }
@@ -74,8 +103,7 @@ class UnionOfTwoArray{
         while (j < arr2.length) {
             // Add element if first element or not duplicate
             if (k == 0 || arr2[j] != temp.get(k - 1)) {
-                temp.add(arr2[j]);
-                k++;
+                temp.add(k++,arr2[j]);
             }
             j++;  // move pointer forward
         }
