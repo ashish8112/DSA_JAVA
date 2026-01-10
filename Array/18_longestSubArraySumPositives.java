@@ -1,3 +1,4 @@
+package DSA.Array;
 import java.util.*;
 class longestSubArraySumPositives {
     static int longestSubArraySum(int [] arr,int target)
