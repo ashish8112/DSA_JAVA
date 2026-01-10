@@ -1,4 +1,4 @@
-package DSA.Array.Rotation;
+package DSA.Array.Easy.Rotation;
 
 import java.util.Scanner;
 

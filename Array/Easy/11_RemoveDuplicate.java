@@ -1,4 +1,4 @@
-package DSA.Array;
+package DSA.Array.Easy;
 
 import java.util.Scanner;
 // This remove duplicate in sorted array .

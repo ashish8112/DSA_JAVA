@@ -1,4 +1,4 @@
-package DSA.Array;
+package DSA.Array.Easy;
 import java.util.*;
 class Third_Largest {
     static void third_largest(int [] arr)

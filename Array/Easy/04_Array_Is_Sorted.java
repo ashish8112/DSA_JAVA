@@ -1,4 +1,4 @@
-package DSA.Array;
+package DSA.Array.Easy;
 import java.util.*;
 class Array_Is_Sorted {
     static boolean isSorted(int [] arr) // For ascending sorted array
