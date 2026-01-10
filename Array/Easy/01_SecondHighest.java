@@ -1,4 +1,4 @@
-package DSA.Array;
+package DSA.Array.Easy;
 import java.util.*;
 // Write a program to find second largest among elements of an array
  class Second_Highest {

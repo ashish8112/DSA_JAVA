@@ -1,4 +1,4 @@
-package DSA.Array.Rotation;
+package DSA.Array.Easy.Rotation;
 
 import java.util.Scanner;
 // Approach -> In left approach when we are rotating an array by D elements or K elements suppose K is 3

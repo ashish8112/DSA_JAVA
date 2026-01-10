@@ -1,4 +1,4 @@
-package DSA.Array;
+package DSA.Array.Easy;
 
 import java.util.Scanner;
 //Write a program to find second largest and second smallest among elements of an array
