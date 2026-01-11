@@ -29,6 +29,8 @@ import java.util.Scanner;
     // location arr[j] which was 1st and then j iterate there becomes 2nd that's how swapping with order is happening . and if in
     // upcoming elements there would be no non-zero so no swapping will be done and all non-zero are moved to front and all zeros are
     // at the end.
+     //Note: J stick with first appearing 0th element and then all elements behind j will be non-zero with swapping with
+     // non-zero with help of ith pointer
 
     static void moviesZerosToEndApproach2(int [] arr)
     {
