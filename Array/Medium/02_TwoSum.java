@@ -1,6 +1,8 @@
 package DSA.Array.Medium;
 import java.util.*;
  class TwoSum {
+     //For brute force
+     //1.Take every element and perform addition with another element in nested loop like arr[i]+arr[j](J is nested loop).
     public static int [] indices(int [] arr,int target)
     {
         int [][] numberwithindex = new int [arr.length][2];
