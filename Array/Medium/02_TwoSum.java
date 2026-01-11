@@ -1,6 +1,6 @@
 package DSA.Array.Medium;
 import java.util.*;
-public class TwoSum {
+ class TwoSum {
     public static int [] indices(int [] arr,int target)
     {
         int [][] numberwithindex = new int [arr.length][2];
