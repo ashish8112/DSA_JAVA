@@ -21,57 +21,41 @@ class MajorityElementOfGreater2 {
         }
         return new int []{number,max};
     }
-
-    public static int [] majorityElementOfGreat2Op(int [] arr)
+    public static int majority2N2(int [] arr)
     {
-        int max=0;
-        int number=0;
-        ArrayList<Integer> num = new ArrayList<>();
+        int count=0,el=0;
         for(int i=0;i<arr.length;i++)
         {
-            int flag=0;
-            int count =0;
-            if(num.isEmpty()){
-                num.add(arr[i]);
-                for(int j=0;j<arr.length;j++)
-                {
-                    if(arr[i]==arr[j])
-                        count++;
-                }
-                if(max<count)
-                {
-                    max=count;
-                    number=arr[i];
-                }
-                flag=1;
+            if(count==0)
+            {
+                el=arr[i];
+                count++;
             }
-            else {
-                int k=num.size()-1;
-                while(k>=0)
-                {
-                    if(arr[i]==num.get(k))
-                    {
-                        flag=1;
-                        break;
-                    }
-                    k--;
-                }
-            }
-            if(flag==0){
-                num.add(arr[i]);
-                for(int j=0;j<arr.length;j++)
-                {
-                    if(arr[i]==arr[j])
-                        count++;
-                }
-                if(max<count)
-                {
-                    max=count;
-                    number=arr[i];
-                }
-            }
+            else if(arr[i]!=el)
+                count--;
+            else
+                count++;
         }
-        return new int [] {number,max};
+        return el;
+    }
+    public static int majorityN2(int [] arr) // Optimal Solution 2
+    {
+        int count=0,el=0;
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]==el)
+                count++;
+            else if(count==0)
+            {
+                el=arr[i];
+                count++;
+            }
+            else if(arr[i]!=el)
+                count--;
+            else
+                count++;
+        }
+        return el;
     }
     public static void main(String [] args)
     {
@@ -82,8 +66,7 @@ class MajorityElementOfGreater2 {
         System.out.println("Enter the values in the array ");
         for(int i=0;i<arr.length;i++)
             arr[i]=sc.nextInt();
-        int [] number= majorityElementOfGreat2Op(arr);
-        System.out.print("NUmber "+number[0]+" repeats "+number[1]+" times");
+        int  number= majorityN2(arr);
+        System.out.print("NUmber "+number+" is majority element I which has frequency of >N/2");
     }
-
 }
