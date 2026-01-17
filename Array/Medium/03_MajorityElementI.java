@@ -1,6 +1,6 @@
 package DSA.Array.Medium;
 import java.util.*;
-class MajorityElementOfGreater2 {
+class MajorityElementNBy2 {
     public static int [] majorityElementI_Brute(int [] arr) // Brute Force
     {
         int number=0;
@@ -51,7 +51,7 @@ class MajorityElementOfGreater2 {
         else 
         return -1; // Although question has stated as confirmed majority element , I have done this if it doesn't exists.
     }
-    public static int majorityI_N2_Op1(int [] arr) // Original Moore voting method.
+    public static int majorityElementMoore(int [] arr) // Original Moore voting method.
     {
         int count=0,el=0;
         for(int i=0;i<arr.length;i++)
@@ -68,7 +68,7 @@ class MajorityElementOfGreater2 {
         }
         return el;
     }
-    public static int majorityI_N2_Op2(int [] arr) // Optimal Solution 2
+    public static int majorityI_Op2(int [] arr) // Optimal Solution 2
     {
         int count=0,el=0;
         for(int i=0;i<arr.length;i++)
@@ -96,7 +96,7 @@ class MajorityElementOfGreater2 {
         System.out.println("Enter the values in the array ");
         for(int i=0;i<arr.length;i++)
             arr[i]=sc.nextInt();
-        int  number= majorityI_N2_Op2(arr);
+        int  number= majorityElementMoore(arr);
         System.out.print("NUmber "+number+" is majority element >N/2"); // Note in question it is confirmed that majority Element will exist.
     }
 }
