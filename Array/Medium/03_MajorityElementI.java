@@ -44,6 +44,7 @@ class MajorityElementOfGreater2 {
         if(count>max)
         {
             cand=el;
+            max=count;
         }
         if(max>arr.length/2)
         return cand;
