@@ -51,7 +51,7 @@ class MajorityElementOfGreater2 {
         else 
         return -1; // Although question has stated as confirmed majority element , I have done this if it doesn't exists.
     }
-    public static int majorityI_N2_Op1(int [] arr)
+    public static int majorityI_N2_Op1(int [] arr) // Original Moore voting method.
     {
         int count=0,el=0;
         for(int i=0;i<arr.length;i++)
