@@ -45,7 +45,10 @@ class MajorityElementOfGreater2 {
         {
             cand=el;
         }
+        if(max>arr.length/2)
         return cand;
+        else 
+        return -1; // Although question has stated as confirmed majority element , I have done this if it doesn't exists.
     }
     public static int majorityI_N2_Op1(int [] arr)
     {
@@ -93,6 +96,6 @@ class MajorityElementOfGreater2 {
         for(int i=0;i<arr.length;i++)
             arr[i]=sc.nextInt();
         int  number= majorityI_N2_Op2(arr);
-        System.out.print("NUmber "+number+" is majority element >N/2");
+        System.out.print("NUmber "+number+" is majority element >N/2"); // Note in question it is confirmed that majority Element will exist.
     }
 }
