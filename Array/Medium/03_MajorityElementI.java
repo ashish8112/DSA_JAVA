@@ -1,7 +1,7 @@
 package DSA.Array.Medium;
 import java.util.*;
 class MajorityElementOfGreater2 {
-    public static int [] majorityElementOfGreat2(int [] arr) // Brute Force
+    public static int [] majorityElementI_Brute(int [] arr) // Brute Force
     {
         int number=0;
         int max=0;
@@ -21,7 +21,33 @@ class MajorityElementOfGreater2 {
         }
         return new int []{number,max};
     }
-    public static int majority2N2(int [] arr)
+    public static int majortityI_Better(int [] arr) // Better Approach 
+    {
+        Arrays.sort(arr);
+        int el=0,max=0,count=0,cand=0;
+        if(arr.length>0)
+            el=arr[0];
+        for(int i=0;i<arr.length;i++)
+            {
+                if(arr[i]==el)
+                    count++;
+                else {
+                    if(count>max)
+                    {
+                        cand=el;
+                        max=count;
+                    }
+                    el=arr[i];
+                    count=1;
+                }
+            }
+        if(count>max)
+        {
+            cand=el;
+        }
+        return cand;
+    }
+    public static int majorityI_N2_Op1(int [] arr)
     {
         int count=0,el=0;
         for(int i=0;i<arr.length;i++)
@@ -38,7 +64,7 @@ class MajorityElementOfGreater2 {
         }
         return el;
     }
-    public static int majorityN2(int [] arr) // Optimal Solution 2
+    public static int majorityI_N2_Op2(int [] arr) // Optimal Solution 2
     {
         int count=0,el=0;
         for(int i=0;i<arr.length;i++)
@@ -66,7 +92,7 @@ class MajorityElementOfGreater2 {
         System.out.println("Enter the values in the array ");
         for(int i=0;i<arr.length;i++)
             arr[i]=sc.nextInt();
-        int  number= majorityN2(arr);
-        System.out.print("NUmber "+number+" is majority element I which has frequency of >N/2");
+        int  number= majorityI_N2_Op2(arr);
+        System.out.print("NUmber "+number+" is majority element >N/2");
     }
 }
