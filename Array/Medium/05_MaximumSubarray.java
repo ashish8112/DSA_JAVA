@@ -32,7 +32,7 @@ class MaximumSubarray{
   public static int maximumSubarrayOpt(int [] arr) // Kadane's Algorithm -> if sum <0 reset sum to 0 becuase we don't need to add negative numbers only one negative number can be largest sum.
   {
     int max=Integer.MIN_VALUE;
-    int sum =0
+    int sum =0;
     for(int i=0;i<arr.length;i++)
       {
         sum+=arr[i];
