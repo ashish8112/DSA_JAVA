@@ -45,6 +45,7 @@ class Buy_And_Sell_Stock{
       {
         arr[i]=sc.nextInt();
       }
-    
+    int profit = maxiProfitOpt(arr);
+    System.out.println("Maximum Profit in Selling stock is "+profit);
   }
 }
