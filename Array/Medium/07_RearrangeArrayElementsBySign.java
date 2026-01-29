@@ -15,8 +15,8 @@ class RearrangeArrayElementsBySign{
         }
         for(int i=0;i<nums.length/2;i++)
         {
-            nums[i*2]=positive[i];
-            nums[i*2+1]=negative[i];
+            nums[i*2]=positive[i]; //i => i+=2
+            nums[i*2+1]=negative[i];//start j with 1 and j=> j+=2
         }
         return nums;
     }
