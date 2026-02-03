@@ -2,7 +2,7 @@ package DSA.Array.Easy;
 
 import java.util.Scanner;
 
-public class FindNumberAppearsOnce {
+class FindNumberAppearsOnce {
     public static void findNumberAppearsOnce(int [] arr)
     {
         int xor=0;
