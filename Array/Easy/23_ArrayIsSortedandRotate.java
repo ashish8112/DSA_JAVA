@@ -34,6 +34,21 @@ class ArrayIsSortedAndRotated{
         }
         return false;
     }
+  public boolean checkBetter(int[] nums) {
+        int [] result = nums.clone();
+        Arrays.sort(result);
+        for(int r=0;r<nums.length;r++)
+        { boolean valid = true;;
+            for(int i=0;i<nums.length;i++)
+            {
+                if(nums[i]!=result[(i+r)%nums.length])
+                valid=false;
+            }
+            if(valid)
+            return true;
+        }
+        return false;
+    }
   public static boolean check(int[] nums) {//Optimal-> In Every either it is rotated or not if it was sorted there would be only one dip or change in elements.
         int dip=0;
         int n = nums.length;
