@@ -1,0 +1,20 @@
+To remove last digit => n/10; || Division (/10) → Digit hataana
+to get last digit => n%10; ||Modulus (%) → Last digit nikalna
+
+if(sum>10 of any two or more number)
+digit = sum % 10
+carry = sum / 10
+ex -> 9+8 = 17
+digit = 17%10 = 7 
+carry = 17/10 = 1 
+17 ans 
+
+ex -> 11+22 = 33
+digit = 33%10 = 3
+carry = 33/10 = 3
+33 ans 
+
+ex -> 14+15 = 29
+digit = 29%10 = 9
+carry = 29/10 = 2
+ans = 29
