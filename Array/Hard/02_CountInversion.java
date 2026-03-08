@@ -1,3 +1,5 @@
+package DSA.Array.Hard;
+
 import java.util.*;
 class CountInversion {
     public static int merge(int [] nums,int low,int high,int count)

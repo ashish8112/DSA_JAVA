@@ -1,5 +1,5 @@
+package DSA.Array.Hard;
 import java.util.*;
-
 class ReversePairs {
     public static int merge(int[] nums, int low, int high, int count) {
         if (low >= high)
