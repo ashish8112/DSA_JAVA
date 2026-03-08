@@ -1,0 +1,102 @@
+====================================================
+ REVERSE PAIRS — COMPLETE THOUGHT PROCESS
+====================================================
+
+PROBLEM
+-------
+Given an array, count pairs (i, j) where i < j and nums[i] > 2 * nums[j].
+
+
+WHY NOT COUNT INSIDE MERGESORT?
+---------------------------------
+The major problem is the POINTER CONFLICT.
+
+During merge, pointer movement is controlled by sorting order:
+  - If nums[left] <= nums[right]  →  add left, increment LEFT
+  - Else                          →  add right, increment RIGHT
+
+If we try to count inside merge, we face 3 bad options:
+
+  1. Increment LEFT  →  Miss valid pairs.
+                        Example: left=-5, right=-6
+                        -5 > 2*(-6) is TRUE, but left moves on
+                        before checking all right elements.
+
+  2. Increment RIGHT →  Breaks sorted merge order.
+                        Example: left=[-5], right=[-5, -6]
+
+                        Step 1: -5 > 2*(-5)? YES → -5 > -10 → TRUE
+                                Add RIGHT (-5), increment RIGHT
+                                Merged so far: [-5], right now at -6
+
+                        Step 2: -5 > 2*(-6)? YES → -5 > -12 → TRUE
+                                Add RIGHT (-6), increment RIGHT
+                                Merged so far: [-5, -6]
+
+                        Step 3: Right exhausted.
+                                while(left<=mid) → add left (-5)
+                                Final merged: [-5, -6, -5]  ❌ NOT SORTED!
+
+                        Root cause: Skipping right pointer causes the
+                        remaining left element to be appended at end,
+                        breaking sort order.
+
+  3. Increment NEITHER → Infinite loop. Loop never terminates.
+
+CONCLUSION: There is no valid pointer movement that satisfies both
+counting and sorting simultaneously. That is why we need a SEPARATE
+countReverse() function.
+
+
+THE FIX — SEPARATE countReverse() BEFORE mergeSort()
+------------------------------------------------------
+We run countReverse() BEFORE the actual merge step.
+At this point, both halves are already sorted (from recursive calls).
+So we can use a clean two-pointer approach dedicated only to counting.
+
+  if (nums[left] > (long) 2 * nums[right])
+      count = count + (mid - left + 1)
+      right++
+  else
+      left++
+
+No merging here. Pointers move freely without sorting constraint.
+
+
+KEY INSIGHT — count + (mid - left + 1)
+----------------------------------------
+Since the left half is sorted:
+  - If nums[left] > 2 * nums[right] is TRUE at a specific left index,
+    then ALL elements from left → mid also satisfy the condition.
+  - So instead of checking one by one, we count all at once in O(1).
+
+Why? Because left half is sorted in ascending order.
+If nums[left] satisfies the condition, nums[left+1], nums[left+2]...
+will also satisfy it (they are all >= nums[left]).
+
+
+OVERFLOW FIX
+-------------
+nums[right] is an int. When multiplied by 2, it can overflow:
+  2 * 1,500,000,000 = 3,000,000,000  >  Integer.MAX_VALUE (2,147,483,647)
+
+Fix: Cast to long before multiplying:
+  nums[left] > (long) 2 * nums[right]
+
+
+EXECUTION FLOW
+--------------
+  Step 1: Recurse left half   →  left half sorted, left pairs counted
+  Step 2: Recurse right half  →  right half sorted, right pairs counted
+  Step 3: countReverse()      →  cross-half pairs counted (both sorted)
+  Step 4: mergeSort()         →  both halves merged into sorted order
+
+
+TIME COMPLEXITY
+---------------
+  countReverse()  →  O(n) per level
+  mergeSort()     →  O(n) per level
+  Total levels    →  O(log n)
+  Overall         →  O(n log n)  ✅ Optimal
+
+====================================================
