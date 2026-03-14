@@ -27,7 +27,7 @@ class PascalTriangle{
           temp.add(value);
           for(int j=1;j<=i;j++)
           {
-            value = value*(i-(j-1));
+            value = value*(i-(j-1)); //value = value*(i-j+1)/j; if j starts with 0 and add one more line if(j==0) add 1 only and remove above temp.add(1);
             value=value/j;
             temp.add(value);
           }
