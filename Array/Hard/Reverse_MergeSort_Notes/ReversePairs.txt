@@ -18,9 +18,9 @@ During merge, pointer movement is controlled by sorting order:
 If we try to count inside merge, we face 3 bad options: //if we try left>right*2;
 
   1. Increment LEFT  →  Miss valid pairs.
-                        Example: left=-5, right=-6
+                        Example: left=-5, right= -4,-5
                         -5 > 2*(-6) is TRUE, but left moves on
-                        before checking all right elements.
+                        before checking all right elements so it will count 1 pair but there are two pairs (-5,-4) , (-5,-5)
 
   2. Increment RIGHT →  Breaks sorted merge order.
                         Example: left=[-5], right=[-5, -6]
