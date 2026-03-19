@@ -15,7 +15,7 @@ During merge, pointer movement is controlled by sorting order:
   - If nums[left] <= nums[right]  →  add left, increment LEFT
   - Else                          →  add right, increment RIGHT
 
-If we try to count inside merge, we face 3 bad options:
+If we try to count inside merge, we face 3 bad options: //if we try left>right*2;
 
   1. Increment LEFT  →  Miss valid pairs.
                         Example: left=-5, right=-6
