@@ -30,3 +30,18 @@ import java.util.*;
          removeDuplicates(arr);
      }
 }
+
+/*Pattern: Two Pointers — Slow & Fast
+Trigger words:
+"remove duplicates"
+"in-place operation"
+"sorted array modify"
+Template:
+int j = 0;  // slow pointer — last unique position
+for(int i = 0; i < arr.length; i++) {  // fast pointer
+    if(arr[i] != arr[j]) {
+        j++;
+        arr[j] = arr[i];
+    }
+}
+// 0 to j = unique elements*/
