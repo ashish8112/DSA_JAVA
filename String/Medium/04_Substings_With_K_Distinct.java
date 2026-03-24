@@ -1,5 +1,7 @@
-class Solution {
-    public int countSubstr(String s, int k) {
+import java.util.*;
+
+class SubstringWithKDistinct {
+    public static int countSubstr(String s, int k) {
         int countSubstr=0;
         
         for(int i=0;i<s.length();i++)
@@ -20,5 +22,15 @@ class Solution {
             }
         }
         return countSubstr;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the string:");
+        String s = sc.next();
+        System.out.println("Enter the value of k:");
+        int k = sc.nextInt();
+
+        System.out.println("Number of substrings with exactly " + k + " distinct characters: " + countSubstr(s, k));
     }
 }
