@@ -12,6 +12,8 @@ class Main {
       //Note only Non-primitve can Datatype can be used 
       Student<String,Integer>student = new Student<>("Ashish",10);//we specify so java can catch compile time error .
       System.out.println("Name of Student = "+student.name+" and Roll no = "+student.id);
+      Student<String,String>student2 = new Student<>("Rahul","11");//if I will pass integer as second parameter compilation error will occur because of safe check
+      System.out.println("Name of Student = "+student2.name+" and Roll no = "+student2.id);
     }
 }
 
