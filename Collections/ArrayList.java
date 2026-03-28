@@ -95,3 +95,11 @@ class Main {
        
     }
 }
+
+
+//Note -> ArrayList <Integer> list = new ArrayList <>(); 
+//It is nothing just a Generic class internally and list is object of that ArrayList classs 
+// so why when we print list which is an object we don't get classname@hashcode (hashcode is refernce address of object)
+//becuase printing of classname@hashcode is done by toString() method which every object contains and it returns classname@hashcode 
+//but internally in ArrayList it is override toString() method to return data only 
+//You can check bottom notes regarding toString() method in GenericMethod.java in WrapperAndGeneric Package(folder) which I have created 
