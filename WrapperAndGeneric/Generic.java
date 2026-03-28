@@ -10,7 +10,7 @@ class Main {
       //Previous syntax was Dog<Non-Primitve Dataype> object_name = new Dog <Same name as left > (value);
       //but java says if you are already specifiying in left side why again in right side 
       //Note only Non-primitve can Datatype can be used 
-      Student<String,Integer>student = new Student<>("Ashish",10);
+      Student<String,Integer>student = new Student<>("Ashish",10);//we specify so java can catch compile time error .
       System.out.println("Name of Student = "+student.name+" and Roll no = "+student.id);
     }
 }
