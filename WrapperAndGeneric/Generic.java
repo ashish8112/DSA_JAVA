@@ -32,3 +32,21 @@ class Student<N,R>{// We can give multiple parameter
     this.id= id;
   }
 }
+
+//Notes
+// ArrayList internally Generic class hai!
+/*
+ArrayList<Integer> list = new ArrayList<>();
+// Same jaisa tera Dog<String> obj = new Dog<>()!
+
+HashMap<String, Integer> map = new HashMap<>();
+// Same Student<String, Integer>!
+
+
+## Quick Summary:
+```
+Raw Type     → Dog obj         warning, unsafe
+Generic      → Dog<String>     type-safe, clean
+Diamond <>   → new Dog<>()     right side repeat nahi
+Multiple     → <N, R>          HashMap jaisa!
+*/
