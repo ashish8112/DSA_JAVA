@@ -35,7 +35,7 @@ class Student<N,R>{// We can give multiple parameter
   }
 }
 
-//Notes
+//Notes List is inteface which is generic 
 // ArrayList internally Generic class hai!
 /*
 ArrayList<Integer> list = new ArrayList<>();
