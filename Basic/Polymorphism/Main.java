@@ -1,3 +1,29 @@
+public class Main{
+  //Best benefit 
+  public static void makeSound (Animal a)
+  {
+    a.sound();
+  }
+  public static void main (String [] args)
+  {
+    Animal a1 = new Dog();  // Animal reference - Dog object 
+    a1.sound(); // Bhow Bhow 
+    a1.eat(); //Eating Bone 
+    //a1.fetch()  // Error Animal doesn't know fetch method 
+
+    Animal a2 = new Cat();  // Animal refernce - Cat object 
+    a2.sound(); //Meow Meow!
+    a2.eat();  //" Eating Fish
+
+    //Need to swap 
+    a1=new Cat();  // above is all correct doesn't break code 
+    a1.sound(); // Meow Meow!
+
+    makeSound(new Dog());//Bhow Bhow!
+    makeSound(new Cat());//Meow Meow!
+  }
+}
+
 interface Animal{
   void eat();
   void sound();
@@ -33,32 +59,37 @@ class Cat implements Animal{
     }
 }
 
-public class Main{
-  //Best benefit 
-  public static void makeSound (Animal a)
-  {
-    a.sound();
-  }
-  public static void main (String [] args)
-  {
-    Animal a1 = new Dog();  // Animal reference - Dog object 
-    a1.sound(); // Bhow Bhow 
-    a1.eat(); //Eating Bone 
-    //a1.fetch()  // Error Animal doesn't know fetch method 
 
-    Animal a2 = new Cat();  // Animal refernce - Cat object 
-    a2.sound(); //Meow Meow!
-    a2.eat();  //" Eating Fish
-
-    //Need to swap 
-    a1=new Cat();  // above is all correct doesn't break code 
-    a1.sound(); // Meow Meow!
-
-    makeSound(new Dog());//Bhow Bhow!
-    makeSound(new Cat());//Meow Meow!
-  }
-}
 
 //Why a1.fetch() gave error 
 //Animal knows only eat and sound method only 
 //during run time, object method is called only that's why specific class method is running but fetch method is not animal method it gives compile time error.
+
+//Ek cheez — kai forms le sakti hai - Polymorphism
+//Payment p;              // ye ek cheez hai
+
+//p = new Gpay();         // form 1
+//p = new PhonePe();      // form 2  
+//p = new Paytm();        // form 3
+
+//p — ek hi variable — teen forms le raha hai
+
+//Overloading mein — method kai forms leta hai
+
+// calc.add(2, 3);       // form 1
+// calc.add(2, 3, 4);    // form 2
+// calc.add(2.5, 3.5);   // form 3
+
+// `add` — ek hi naam — teen forms** 
+
+// ## Toh exactly ye hai Polymorphism
+  
+// Poly    =  Many  =  Kai
+// Morph   =  Form  =  Roop
+
+// Polymorphism = Kai Roop
+
+// Class kayi kaam nahi karti            ❌
+// Reference variable kai roop leta hai  ✅
+// Method naam kai roop leta hai         ✅
+
