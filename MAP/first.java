@@ -14,7 +14,16 @@ class first{
       {
         System.out.println(val);
       }
-     for(Map.Entry<Integer,String>entry:map.entrySet())  //return entry data in form of table 
+     for(Map.Entry<Integer,String>entry:map.entrySet())  //**`Map.Entry` = ek row ka blueprint — key aur value dono saath!**
        System.out.println(entry.getKey()+" "+entry.getValue());
+      //Note:
+    //Map is interface and Entry is nested Interface of Map 
+    // interface Map {
+    // // ...
+    // interface Entry<K, V> {   // ← andar wala interface!
+    //     K getKey();
+    //     V getValue();
+    // }
+//}
     }
 }
