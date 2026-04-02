@@ -25,6 +25,19 @@ import java.util.*;
         }
         return new int [] {-1,-1};
     }
+  public static int [] opIndices(int [] arr ,target)
+  {
+   HashMap<Integer,Integer>map = new HashMap<>();
+   for(int i=0;i<arr.length;i++)
+    {
+     int complement = target-arr[i]; //need to check complement first suppose target is 6 array is [3,3] so ideally ans should be 0,1 but if we added 3 and then 
+     //complement which is 3 and when we complement we get true and that is our currrent position so answer will be returned as 0,0 which is wrong.
+     if(map.containsKey(complement))
+      return new int [] {map.get(complement),i};
+     map.put(arr[i],i);
+    }
+   return new int [] {-1,-1};
+  }
     public static void main(String [] args){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the size of the array ");
