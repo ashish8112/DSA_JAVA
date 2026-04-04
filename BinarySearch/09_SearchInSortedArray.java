@@ -7,9 +7,9 @@ class Solution {
             int mid = low+(high-low)/2;
             if(nums[mid]==target)
             return mid;
-            else if (nums[low]<=nums[mid])
+            else if (nums[low]<=nums[mid])    //to check it half is sorted if it is true means left half is sorted.
             {
-                if(target>=nums[low]&&target<=nums[mid])
+                if(target>=nums[low]&&target<=nums[mid])  //if left half is sorted we can check if value is between these element then element right else eliminate right
                 high=mid-1;
                 else
                 low=mid+1;
