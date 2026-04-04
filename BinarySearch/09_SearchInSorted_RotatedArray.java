@@ -1,3 +1,8 @@
+//Binary Search sorted array pe hi kaam karta hai isliye hamein check karna padta hain pehle mid se ki kon sa sorted hai left ya right half 
+//if left half sorted nhi hain current iteration mein but target wahi hain so right sorted dikhega phir check karlengey ki uss righ half mein target hain 
+//agar nhi to left half ko lelengey and high = mid -1 hon jayega , to agley iteration mein phir left half two halves mein divide honga so yaha phir check karengey 
+//kon sa sorted hai left ya right becuase rotated sorted array mein ek half hamesha sorted rahega kisi bhi index se so sorted array pe ham binary search apply kar 
+//saktey hain 
 class Solution {
     public int search(int[] nums, int target) {
         int low =0;
