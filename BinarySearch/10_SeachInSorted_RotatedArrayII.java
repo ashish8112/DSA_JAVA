@@ -37,6 +37,7 @@ class Solution {
         return false;
     }
 }
+
 /*Pattern: Binary Search — Rotated Sorted Array with Duplicates (LC 81)
 Trigger: "rotated sorted", "duplicates allowed", "search in rotated"
 Template:
