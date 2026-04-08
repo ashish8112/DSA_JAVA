@@ -30,7 +30,7 @@ class Solution {
     }
 }
 
-/*Pattern: Binary Search — Single Element in Sorted Array
+/*Pattern: Binary Search — Single Element in Sorted Array (Index Based Pattern)
 Trigger: "single element", "every element twice except one", O(log n) required
 Template:
   if(mid%2==0) {                          // even index
