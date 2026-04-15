@@ -20,5 +20,5 @@ class Solution {
     }
 }
 
-time complexity = O(n)+O(n+k) = O(n)
+time complexity = O(n)+O(n+k) = O(n+k)
 space complexity = O(n) 
