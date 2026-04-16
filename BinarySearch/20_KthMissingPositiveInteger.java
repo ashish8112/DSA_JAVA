@@ -22,3 +22,21 @@ class Solution {
 
 time complexity = O(n)+O(n+k) = O(n+k)
 space complexity = O(n) 
+
+//better Approach 
+class Solution {
+    public int findKthPositive(int[] arr, int k) {
+        for (int i = 0;i<arr.length;i++)
+        {
+            if(arr[i]<=k)
+            k++;
+            else{
+                break;
+            }
+        }
+        return k;
+    }
+}
+
+time complexity= O(n)
+space complexity= O(1)
