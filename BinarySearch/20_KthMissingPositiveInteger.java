@@ -65,4 +65,53 @@ space complexity= O(1)
 
 // So the answer lies just after index 3 (value 7). At this point, 3 numbers are already missing. We need 2 more (5 - 3 = 2). Starting from 7, 
 // the next missing numbers are 8 (4th) and 9 (5th). Answer = 9.
-// Algebraically: arr[high] + (k - missing_at_high) simplifies to high + k + 1 because arr[high] cancels out — and this formula even handles the edge case when high = -1.
+// Algebraically: arr[high] + (k - missing_at_high) simplifies to high + k + 1 because arr[high] cancels out — 
+//    and this formula even handles the edge case when high = -1. -> at array index out of bound scenario like below code 
+
+//     class Solution {    //This will cause index out of bound of some scenario
+//     public int findKthPositive(int[] arr, int k) {
+//         int low = 0;
+//         int high = arr.length-1;
+//         while(low<=high)
+//         {
+//             int mid = low+(high - low)/2;
+//             int missing = arr[mid]-(mid+1);
+//             if(missing<k)
+//             low=mid+1;
+//             else
+//             high = mid-1;
+//         }
+//         //now check at index high how much element is missing 
+//         int missing = arr[high]-(high+1);
+//         //after finding missing we do know it is less than our k missing so we need to chech how much we
+//         // need to jump from current value of high to get kth missing value so 
+//         //so use (k missing ) - (missing at high)   
+//         int remainingMissing = k-missing;
+//         //now we get our missing kth missing by adding current value with remainingMissing 
+//         return arr[high]+remainingMissing;
+//     }
+// }
+
+//Optimal code 
+    class Solution {
+    public int findKthPositive(int[] arr, int k) {
+        int low = 0;
+        int high = arr.length-1;
+        while(low<=high)
+        {
+            int mid = low+(high - low)/2;
+            int missing = arr[mid]-(mid+1);
+            if(missing<k)
+            low=mid+1;
+            else
+            high = mid-1;
+        }
+       return high+k+1;
+    }
+}
+
+/*Pattern: Binary Search on Sorted Array (missing count property)
+Trigger: kth missing positive in sorted array — missing count formula used
+Template: missing = arr[mid]-(mid+1), find boundary where missing crosses k
+Key Insights: arr[high] cancels algebraically → high+k+1 handles edge case high=-1
+Complexity: Time O(log n), Space O(1)*/
