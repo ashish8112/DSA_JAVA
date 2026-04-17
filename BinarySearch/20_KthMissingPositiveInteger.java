@@ -38,8 +38,38 @@ class Solution {
     }
 }
 
-time complexity= O(n)
-space complexity= O(1)
+/*
+ * INTUITION:
+ * If no array existed, kth missing number = k itself.
+ * Example: k=5, no array → answer is simply 5.
+ *
+ * But every present number <= k "steals" a missing slot.
+ * So we shift k forward by 1 for each present number found.
+ *
+ * Example: arr=[1], k=1
+ * Without array → 1st missing = 1
+ * But 1 is present → it stole the 1st missing slot → now find 2nd missing
+ * k shifts to 2 → answer = 2 ✓
+ *
+ * HOW IT WORKS:
+ * arr = [2, 3, 4, 7, 11], k = 5
+ *
+ * arr[0]=2, 2<=5 → k=6  (2 stole a slot, shift target)
+ * arr[1]=3, 3<=6 → k=7  (3 stole a slot, shift target)
+ * arr[2]=4, 4<=7 → k=8  (4 stole a slot, shift target)
+ * arr[3]=7, 7<=8 → k=9  (7 stole a slot, shift target)
+ * arr[4]=11, 11<=9? NO  → break
+ *
+ * 11 > 9 means seat 9 doesn't exist in array → 9 is missing!
+ * return k = 9 ✓
+ *
+ * CORE INSIGHT:
+ * When arr[i] > k → k itself became a missing number.
+ * No present number can steal it anymore → return k.
+ */
+
+// time complexity= O(n)
+// space complexity= O(1)
 
 
 //Optimal Approach
