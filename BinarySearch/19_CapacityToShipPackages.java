@@ -1,6 +1,6 @@
 class Solution {
     public int shipWithinDays(int[] weights, int days) {
-        int max = weights[0];
+        int max = weights[0];  
         int sumOfWeights = 0;
         int ans =-1; 
         for(int i=0;i<weights.length;i++)
@@ -8,7 +8,7 @@ class Solution {
             max=Math.max(max,weights[i]);
             sumOfWeights+=weights[i];
         }
-        int low = max;
+        int low = max;    //because every weights must be valid to shipped
         int high = sumOfWeights;
         while(low<=high)
         {
