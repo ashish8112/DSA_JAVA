@@ -5,9 +5,9 @@ class NullPointer{
     Map<String, Integer> map = new HashMap<>();
     map.put("a", 5);
 
-    //Problem 1 -> int val = map.get("b");  //  NPE!
+    //Problem 1 -> int val = map.get("b");  //  Null Pointer Exception
     // "b" exist hi nahi — get() returns NULL
-    // null ko int mein unbox karna — BOOM!
+    // null ko int mein unbox karna — Error
 
     // Option 1 — getOrDefault
     int val = map.getOrDefault("b", 0);  //  "b" nahi mila toh 0 return 
