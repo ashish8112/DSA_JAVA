@@ -13,7 +13,7 @@ class NullPointer{
     int val = map.getOrDefault("b", 0);  //  "b" nahi mila toh 0 return 
 
     // Option 2 — containsKey check
-    if (map.containsKey("b")) {
+    if (map.containsKey("b")) {  //O(n) Time Complexity
     int val2 = map.get("b");
     }
     
