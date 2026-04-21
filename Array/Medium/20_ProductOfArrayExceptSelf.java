@@ -46,3 +46,13 @@ class Solution {
         return ans;
     }
 }
+
+/*Pattern: Prefix/Suffix Product
+Trigger: product of array except self — division not allowed
+Template: prefix[i] = prefix[i-1]*nums[i-1], suffix[n-i] = suffix[n-i+1]*nums[n-i+1]
+          ans[i] = prefix[i] * suffix[i]
+Key Insights: prefix[i] = product of all elements LEFT of i
+              suffix[i] = product of all elements RIGHT of i
+              ans[i] = left product * right product
+Complexity: Time O(n), Space O(n) — O(1) possible with running suffix variable*/
+
