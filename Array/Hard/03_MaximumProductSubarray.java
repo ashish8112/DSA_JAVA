@@ -27,3 +27,7 @@ class MaxProductSubarray {
         System.out.println("Max Product: " + maxProduct(nums));
     }
 }
+
+//We will wonder why not only with prefix because when there is odd number of negative in array prefix will failed to find maximum product subarray 
+//ex = 1 -2 -3 - 4 1
+//prefix Max = 6 (left to right) ||  suffix Max = 24 (right to left)
