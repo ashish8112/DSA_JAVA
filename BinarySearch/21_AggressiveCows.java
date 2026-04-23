@@ -1,4 +1,4 @@
-//This is new pattern of min(max) or max(min) we need to short the array to get our output 
+//This is new pattern of min(max) or max(min) we need to short the array to get our output of problem
 class Solution {  //Brute Force
     public boolean isPossible(int [] nums,int d , int cows)
     {
