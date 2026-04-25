@@ -43,3 +43,11 @@ Final year CS student. Placement prep. Strong C/C++ base, learning DSA patterns 
 
 
 *One pattern at a time.*
+
+---
+
+## Connect
+- GitHub: https://github.com/ashish8112
+- LinkedIn: https://www.linkedin.com/in/ashish-shukla8112/
+- LeetCode: https://leetcode.com/ashish_shukla81
+- Email: ashishkrshukla.dev@gmail.com
