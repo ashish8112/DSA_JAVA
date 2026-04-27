@@ -31,7 +31,8 @@ class Solution {
             if(nums[mid]<nums[mid+1])
             low=mid+1;
             else
-            high=mid;//because mid can be peak element
+            high=mid;//because mid can be peak element, here right element is smaller than current element so when low pointer comes just one index before high 
+            //and if it will be smaller then this element becuase mid < mid+1 so low will be increased to current , low will be peak element.
         }
         return low;//according to upper code when low==high we get our peak element.
     }
