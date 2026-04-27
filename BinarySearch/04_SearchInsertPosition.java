@@ -1,3 +1,4 @@
+//smallest index where it is largest than target when target is not in array.
 class Solution {
     public int searchInsert(int[] nums, int target) {
         int index = nums.length;
