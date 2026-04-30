@@ -11,3 +11,33 @@ class Solution { //But it violates the constraint of o(1) space complexity
         return -1;
     }
 }
+//Better with o(1) time complexity 
+class Solution {
+    public int findDuplicate(int[] nums) {
+        int low =1;
+        int high = nums.length-1;
+        while(low<high)
+        {
+            int mid = low+(high-low)/2;
+            int count =0;
+            for(int i=0;i<nums.length;i++)
+            {
+                if(nums[i]<=mid)
+                count++;
+            }
+            if(count<=mid)
+            low=mid+1;
+            else
+            high = mid;
+        }
+        return low;
+    }
+
+    //Searching on number and checking if number of count <= mid of range of 1 to n-1(size of array -1) 
+    //we check if number of count <= mid of range 1 to n-1 , and count updated using array elements 
+    //if count is greater than mid value means extra number is forciblily pushed in left side of search range from mid so we need to check in left 
+    //by high =  mid becuase mid can be duplicate number not mid -1 because we can miss potential value 
+    // if count is small or equal to mid means no extra value in left array , so it must be right side if duplicate exists 
+    //when low == high means we got our duplicate value 
+}
+```
