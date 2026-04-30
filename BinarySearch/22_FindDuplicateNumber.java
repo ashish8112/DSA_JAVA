@@ -11,7 +11,7 @@ class Solution { //But it violates the constraint of o(1) space complexity but t
         return -1;
     }
 }
-//Better with o(1) time complexity 
+//Better with o(1) space complexity and time complexity o(n log n)
 class Solution {
     public int findDuplicate(int[] nums) {
         int low =1;
