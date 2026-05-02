@@ -32,7 +32,7 @@ class ReverseWords {
 
         while (i >= 0) {
             while (i >= 0 && s.charAt(i) == ' ') i--;
-            if (i < 0) break;
+            if (i < 0) break; // because if I becomes lower then 0 it should exit the loop else unnecessary space will be added in the result string.
             int end = i;
             while (i >= 0 && s.charAt(i) != ' ') i--;
             String word = s.substring(i + 1, end + 1);
