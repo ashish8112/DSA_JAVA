@@ -9,7 +9,7 @@ class Second_CountFrequency{
         map.put(c,map.getOrDefault(c,0)+1);  //map.getOrDefault return the value of key if key doesn't exits return default value of argument like 0 here
       }                                      //so suppose a:1 so map.getOrDefault(a,0) -> it returns 1 so 1+1 becuase ,map.getOrDefault(a,0)+1
 
-    // for(int i=0;i<s.length();i++)    //Use this or above
+    // for(int i=0;i<s.length();i++)    //Use this or above 
     // {
     //     char ch = s.charAt(i);
     //     map.put(ch,map.getOrDefault(ch,0)+1);
