@@ -11,7 +11,7 @@ class first{
     System.out.println(map.size());
       
     //map.containsKey(key) , map.containsValue(value);
-    System.out.println(map.containsKey(2));   //always pass key datatype else it will show error
+    System.out.println(map.containsKey(2));   //always pass key datatype else it will show error and time complexity 0(1)
     System.out.println(map.containsValue("Ashish"));
    
     //map.remove(Object key) 
