@@ -47,3 +47,7 @@ class sort_an_array_0_1_2 {
             }
         }
     }
+
+
+//This is a leetcode sort colors problem 
+alternative of this question is sort array by parity 
