@@ -97,6 +97,6 @@ class MajorityElementNBy2 {
         for(int i=0;i<arr.length;i++)
             arr[i]=sc.nextInt();
         int  number= majorityElementMoore(arr);
-        System.out.print("NUmber "+number+" is majority element >N/2"); // Note in question it is confirmed that majority Element will exist.
+        System.out.print("NUmber "+number+" is majority element >N/2"); // Note in question it is confirmed that majority Element will exist. 
     }
 }
