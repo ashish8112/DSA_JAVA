@@ -8,6 +8,7 @@
 If the public modifier is omitted(exclude or not written), the class will have default (package-private) access.
 This means it can only be accessed by other classes within the same package.
 
+
 **If the class name and source file name are the same but the class is not public, 
 it will compile and run normally — Java doesn’t require a name match unless the class is public.
 
