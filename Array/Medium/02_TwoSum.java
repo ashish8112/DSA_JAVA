@@ -60,3 +60,6 @@ import java.util.*;
             System.out.println("Indices of two sum of target "+target+" is not found");
     }
 }
+
+
+//we can use Hashmap to solve this problem in O(n)
