@@ -33,7 +33,7 @@ import java.util.*;
      int complement = target-arr[i]; //need to check complement first suppose target is 6 array is [3,3] so ideally ans should be 0,1 but if we added 3 and then 
      //complement which is 3 and when we complement we get true and that is our currrent position so answer will be returned as 0,0 which is wrong.
      if(map.containsKey(complement))
-      return new int [] {map.get(complement),i};
+      return new int [] {map.get(complement),i};//indices not value
      map.put(arr[i],i);
     }
    return new int [] {-1,-1};
