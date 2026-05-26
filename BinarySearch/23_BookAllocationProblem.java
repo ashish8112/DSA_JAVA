@@ -93,7 +93,8 @@ class Solution {
 // The third combination has the minimum pages assigned to a student which is 113.
 
 // such that we have to allocate 
-
+//In such question think like that how to thing any X number to fit index entirely first or using greedy how much should pages or books should I give to first student.. 
+// this will click we need a range to search to get a X number to first first student in that limit of X then fill another student in that range and find total number of student allocated with that range of X
 // Approach -> while assigning books to student we must ensure that whole book must be given to any one student so we need to start searching from maximum value of array which 90 
 // because if we take less than that and starts assiging to student it is impossible to give book with 90 page to any single student so before 90 page everything is useless 
 // for highest search is sum of entire pages because 1 student can have all books which is maximum , more than that no of pages is useless because no pages are there more than that totoal of sum of pages 
