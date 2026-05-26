@@ -30,6 +30,7 @@ class Solution {
         return totalPage;
     }
 }
+//Time Complexity = o(n * (sum(arr)-max(arr)) = o(n * (sum-max))
 
 //Optimal Approach
 class Solution {
@@ -73,6 +74,7 @@ class Solution {
         return ans;
     }
 }
+//Time Complexity = o(n*log(sum-max))
 
 //Pattern : Binary search on Answer
 //Approch : Greedy method on search space find first minimum of pages which which statisfy count == k but not count==k it count <=k why see below context with example. 
