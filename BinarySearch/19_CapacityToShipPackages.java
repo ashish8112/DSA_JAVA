@@ -38,7 +38,7 @@ class Solution {
         return ans;
     }
 }
-//pattern : Binary Search on answers
+//pattern : Binary Search on answers with greedy Appraoch , similar Problem see to Book alloacation Problem
 //approach : we should start with maximum weight because ship must load every weight if shippment weight is smaller than package weight and than one enitre ship 
 // will not also able to carry that package so that is invalid weight of ship so start with maximum of array (maximum weight of package) and hgih must be some
 // of all weights so it can shipped in most least number of days which is practically 1 , so entire package  can be shipped in 1 day . 
