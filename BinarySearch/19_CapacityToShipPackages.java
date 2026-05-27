@@ -38,6 +38,7 @@ class Solution {
         return ans;
     }
 }
+//We have to find a smallest limit in which we can fill packages to get minimum weight which can be used to ship the weight within given days to ship.
 //pattern : Binary Search on answers with greedy Appraoch , similar Problem see to Book alloacation Problem
 //approach : we should start with maximum weight because ship must load every weight if shippment weight is smaller than package weight and than one enitre ship 
 // will not also able to carry that package so that is invalid weight of ship so start with maximum of array (maximum weight of package) and hgih must be some
