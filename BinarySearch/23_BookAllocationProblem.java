@@ -115,7 +115,7 @@ class Solution {
 // because here constraint will fail that each student must have atleast 1 book 
 // that's why at the top we have handled edge case of returning -1. 
 //Now come to main point why count <= k is valid , it is  because except greater than no of student which is handled with -1 , there would be  same number of students with book or less than no of books 
-//so when no of student is smaller and equall to no of pages while allocating the books pages to student if we get count as less than k means atleast one student has got more than one book so we can distribute that
+//so when no of student is smaller and equall to no of books while allocating the books pages to student if we get count as less than k means atleast one student has got more than one book so we can distribute that
 // extra book to any remaining student for details let's see below example 
 // arr[] = {10, 15, 19, 10, 5, 18, 7}
 //output = 25 
@@ -123,5 +123,21 @@ class Solution {
 // so we should increase the size of allocation of page so when i = 24 we get 6 till then also like -> 10 (1), 15 (2),  19(3), 10+5 (4), 18 (5), 7(6) so we allocated this pages to six students 
 // now when i = 25 we get 4 student, allocation is like (10+15, 19, 10+5, 18+7) so two students are taking more than one book so one extra book can be allocated to that 5 student like 18 to 4th and 7 to 5 so 
 // so minimum maximum we get 25 for allocating among 4 student .
+
+// Example:
+// arr = [2,3], k = 2
+//
+// Answer is 3 because the question asks for the minimum possible
+// maximum pages assigned to a student.
+
+// However, 5 is also a valid allocation limit.
+// With limit = 5, one student can take both books [2,3],
+// so greedy allocation uses only 1 student.
+//
+// This is still considered valid because we can redistribute
+// the books as [2] and [3] among 2 students,
+// and the maximum pages assigned still remains <= 5(mid).
+//
+// That is why we check count <= k instead of count == k.
 
 // so while doing binary seach we are finding possible ans where count of student is smaller than k and then moving left side to check minimum possible pages to allocate.
