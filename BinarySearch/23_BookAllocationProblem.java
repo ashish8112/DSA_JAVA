@@ -76,6 +76,11 @@ class Solution {
 }
 //Time Complexity = o(n*log(sum-max))
 
+//In simple find X limit in which we can fill as much as X can allow to fill pages and then give to one student and then to another to other student till limit
+//this how our all books will be splitted or allocated to k students and if we got less than k student it is also valid why see last example in this comment
+// and in binary we go left even student is left because we want minimum but going left doesn't increase X limit it decrease the X limit high = mid -1 so 
+// it will minimum X limit to split or allocate the books among k or less k student and less correct because some get extra book which can given to another 
+// student for more about why less see last example or read entire comment!!
 //Pattern : Binary search on Answer
 //Approch : Greedy method on search space find first minimum of pages which which statisfy count == k but not count==k it count <=k why see below context with example. 
 //In such question think like that how to thing any X number to fit index entirely first or using greedy how much should pages or books should I give to first student.. 
