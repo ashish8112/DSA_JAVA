@@ -1,4 +1,25 @@
-//This is new pattern of min(max) or max(min) we need to short the array to get our output of problem
+class Solution { // Brute Force as we wants maximum take maximum distance possible and starts checking from there to minimum distance .
+    public int aggressiveCows(int[] stalls, int k) {
+        Arrays.sort(stalls);  //sort because we have to find distance between two values posistion is value not index so sort values to make easier to apply greedy
+        int high = stalls[stalls.length-1]-stalls[0];
+        for(int i=high;i>=0;i--) // high from maximum distance possible 
+        {
+            int cow=1;
+            int lp=0;
+            for(int j=1;j<stalls.length;j++)    
+            {
+                if(stalls[j]-stalls[lp]>=i)
+                {
+                    cow++;
+                    lp=j;
+                }
+                if(cow>=k)    // If we got this maximum possible distance 
+                return i;
+            }
+        }
+        return high-stalls[0];
+    }
+}
 class Solution {  //Brute Force
     public boolean isPossible(int [] nums,int d , int cows)
     {
@@ -20,7 +41,7 @@ class Solution {  //Brute Force
         Arrays.sort(stalls);
         int max = stalls[stalls.length-1];
         for(int i=1;i<=max-stalls[0];i++){
-            if(isPossible(stalls,i,k)==true)
+            if(isPossible(stalls,i,k)==true)// we are going for right side for maximum distance between cows , if it fails means last i was maximum distance 
             continue;
             else 
             return i-1;
