@@ -4,14 +4,14 @@ Final year CS student. Placement prep. Strong C/C++ base, learning DSA patterns 
 
 ## Progress
 
-**Total: 87 problems solved**
+**Total: 91 problems solved**
 
 | Topic | Count | Status |
 |-------|-------|--------|
 | Arrays | 49 | Completed |
 | Strings | 13 | Completed |
 | HashMap | 4 | Completed |
-| Binary Search | 21 | Completed |
+| Binary Search | 24 | Completed |
 | HashSet | - | Remaining |
 | Stack / Queue | - | Remaining |
 | Recursion | - | Remaining |
