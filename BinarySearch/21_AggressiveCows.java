@@ -13,7 +13,7 @@ class Solution { // Brute Force as we wants maximum take maximum distance possib
                     cow++;
                     lp=j;
                 }
-                if(cow>=k)    // If we got this maximum possible distance 
+                if(cow>=k)    // If we got this maximum possible distance that is current solution.
                 return i;
             }
         }
