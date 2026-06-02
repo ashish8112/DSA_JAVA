@@ -1,3 +1,56 @@
+class Solution {
+    public double minMaxDist(int[] stations, int K) {
+        if(stations.length<=1)
+        return 0;
+        int maxGap = 0;
+        for(int i=0;i<stations.length-1;i++){
+            maxGap = Math.max(maxGap,stations[i+1]-stations[i]);
+        }
+        for(double i=1;i<=maxGap;i++)
+        {
+             double count =0;
+             for(int j=0;j<stations.length-1;j++)
+             {
+                 double diff = stations[j+1]-stations[j];
+                 count+=Math.ceil(diff/i) - 1;
+             }
+             if(count<=K)
+             return i;
+        }
+        return (double)maxGap;
+    }
+}
+//This code is working for integer but not for the decimal and float.
+
+class Solution {  
+    public double minMaxDist(int[] arr, int k) {
+        int n = arr.length;
+        if(n <= 1) return 0;
+        int[] howMany = new int[n - 1];
+        for(int gasStations = 1; gasStations <= k; gasStations++) {
+            double maxSection = -1;
+            int maxInd = -1;
+            for(int i = 0; i < n - 1; i++) {
+                double diff = arr[i + 1] - arr[i];
+                double sectionLength = diff / (howMany[i] + 1.0);
+                if(sectionLength > maxSection) {
+                    maxSection = sectionLength;
+                    maxInd = i;
+                }
+            }
+            howMany[maxInd]++;
+        }
+        double maxAns = -1;
+        for(int i = 0; i < n - 1; i++) {
+            double diff = arr[i + 1] - arr[i];
+            double sectionLength = diff / (howMany[i] + 1.0);
+            maxAns = Math.max(maxAns, sectionLength);
+        }
+        return maxAns;
+    }
+}
+
+
 //Pattern - Binary Search on Answer 
 // Approach - low = 1 and high = maximum gap between any two consectuive gas station 
 // ex -> arr = [1,7] , k=2
