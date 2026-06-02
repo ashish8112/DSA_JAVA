@@ -1,4 +1,4 @@
-class Solution {
+class Solution { //This code is working for integer but not for the decimal and float.
     public double minMaxDist(int[] stations, int K) {
         if(stations.length<=1)
         return 0;
@@ -20,7 +20,37 @@ class Solution {
         return (double)maxGap;
     }
 }
-//This code is working for integer but not for the decimal and float.
+
+
+//----------------------------------------------------Optimal Approach------------------------------------------------------
+// why i = 0 and i < 100 
+// Given max constraint is MaxGap max 10^8 ho sakta hai (constraints se) 
+// let take example arr = [1,8] k =2 
+//high = 8 and low = 1
+// maxGap = 7 
+// start: range = 7        (high - low = 7)
+// i=0:   range = 3.5      (7 / 2)
+// i=1:   range = 1.75     (7 / 4)
+// i=2:   range = 0.875    (7 / 8)
+// i=3:   range = 0.4375   (7 / 16)
+// **see the pattern so it is (maxGap / 2^n) for n iteration ** n iteration = maxGap/2^n
+// Given maxGap = 10^8 so -> 10^8/2^n < 10^-6 because question wants till 6 decimal only. 
+//multiplying both side 2^n we get 10^8 < 10^-6 * 2^n, now dividing 10^-6 both side we get 10^(8+6) < 2^n 
+// 10^14 < 2^n
+// now take log both side 
+// 14 log 10 < n log 2 and take base as 2 both side 
+// 14 * 3.32 < n => 46.5 <n so 47 iteration is sufficient for getting answer but for safe side we take 0 to 100 
+
+// why low = 1e-9 — not 0, because mid=0 pe Math.ceil(diff/0) = Infinity → runtime error
+// we can choose low = 0.1 or anything but what if possible answer is 0.5 so we take 1e-9 and why this why not 1e-10 because 
+//Gas station positions integers hain  arr[i] integer hai. Toh minimum possible gap bhi integer hai minimum 1.
+//Agar gap minimum 1 hai aur k maximum 10^9 stations dal sakte hain . let's see with example \
+//Ab is 1 unit gap mein k = 10^9 stations daal do:
+//0 ----1---- 1  -> 10^9 stations daalne ke baad 10^9 + 1 equal parts ban jaayenge:
+// d = 1 / (10^9 + 1) ≈ 0.000000001 = 10^-9 this is minimum possible answer as per question 
+
+// why high = mid and low = mid why not high = mid-1 and low = mid +1 
+// because it is not Integer question in integer mostly we have checked mid that's why we skip that value but in decimal there is infinite number from mid to mid -1 or mid to mid + 1
 
 class Solution {
     public double minMaxDist(int[] stations, int k) {
