@@ -22,31 +22,24 @@ class Solution {
 }
 //This code is working for integer but not for the decimal and float.
 
-class Solution {  
-    public double minMaxDist(int[] arr, int k) {
-        int n = arr.length;
-        if(n <= 1) return 0;
-        int[] howMany = new int[n - 1];
-        for(int gasStations = 1; gasStations <= k; gasStations++) {
-            double maxSection = -1;
-            int maxInd = -1;
-            for(int i = 0; i < n - 1; i++) {
-                double diff = arr[i + 1] - arr[i];
-                double sectionLength = diff / (howMany[i] + 1.0);
-                if(sectionLength > maxSection) {
-                    maxSection = sectionLength;
-                    maxInd = i;
-                }
+class Solution {
+    public double minMaxDist(int[] stations, int k) {
+        if(stations.length <= 1) return 0;
+        int maxGap = 0;
+        for(int i = 0; i < stations.length-1; i++)
+            maxGap = Math.max(maxGap, stations[i+1]-stations[i]);
+        double low = 1e-9, high = maxGap, ans = maxGap;
+        for(int i = 0; i < 100; i++) {
+            double mid = (low + high) / 2.0;
+            double count = 0;
+            for(int j = 0; j < stations.length-1; j++) {
+                double diff = stations[j+1] - stations[j];
+                count += Math.ceil(diff/mid) - 1;
             }
-            howMany[maxInd]++;
+            if(count <= k) { ans = mid; high = mid; }
+            else low = mid;
         }
-        double maxAns = -1;
-        for(int i = 0; i < n - 1; i++) {
-            double diff = arr[i + 1] - arr[i];
-            double sectionLength = diff / (howMany[i] + 1.0);
-            maxAns = Math.max(maxAns, sectionLength);
-        }
-        return maxAns;
+        return ans;
     }
 }
 
