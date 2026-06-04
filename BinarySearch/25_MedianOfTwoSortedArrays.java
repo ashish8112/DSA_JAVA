@@ -61,6 +61,7 @@ class Solution {  //Optimal Solution
 }
 
 // Step 1: Take smaller array to determine search space → smallest array
+
 // Step 2: Initialize low = 0, high = nums1.length (not -1)
 // Take mid and perform.
 // Initialize four variables:
@@ -85,18 +86,21 @@ class Solution {  //Optimal Solution
 // else left2 = nums2[cut2 - 1]
 // if (cut2 == nums2.length) take Right2 = Integer.MAX_VALUE
 // else Right2 = nums2[cut2]
-// Step 5: if (left1 > right2)
-// high = mid - 1
-// (We need to send maximum values in right and minimum value in left. Because cut1 will be more less to all elements will be pushed in right and cut2 will be 
-//larger so values be pushed left.)
-// else
-// low = mid + 1
+
 // Step 4: until → max(left1, left2) <= min(right1, right2)
 // then if the above condition is true:
 // Checks condition if total of both is even if (nums1+nums2 % 2 == 0)
 // return max(L1, L2) + min(R1, R2) / 2
 // else return Right2 → min(Right1, Right2)
 // because border or starting of right side is median.
+
+// Step 5: if (left1 > right2)
+// high = mid - 1
+// (We need to send maximum values in right and minimum value in left. Because cut1 will be more less to all elements will be pushed in right and cut2 will be 
+//larger so values be pushed left.)
+// else
+// low = mid + 1
+
 
 // Why left1 > Right2 ? 
 // Because we already know left side array including (both nums1 and nums2 left side with cut) is larger than right side array.
