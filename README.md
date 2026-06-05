@@ -11,7 +11,7 @@ Final year CS student. Placement prep. Strong C/C++ base, learning DSA patterns 
 | Arrays | 49 | Completed |
 | Strings | 13 | Completed |
 | HashMap | 4 | Completed |
-| Binary Search | 24 | Completed |
+| Binary Search | 27 | Completed |
 | HashSet | - | Remaining |
 | Stack / Queue | - | Remaining |
 | Recursion | - | Remaining |
@@ -48,6 +48,6 @@ Final year CS student. Placement prep. Strong C/C++ base, learning DSA patterns 
 
 ## Connect
 - GitHub: https://github.com/ashish8112
-- LinkedIn: https://www.linkedin.com/in/ashish-shukla8112/
-- LeetCode: https://leetcode.com/ashish_shukla81
+- LinkedIn: https://www.linkedin.com/in/ashish-shukla81/
+- LeetCode: https://leetcode.com/ashish-shukla81
 - Email: ashishkrshukla.dev@gmail.com
