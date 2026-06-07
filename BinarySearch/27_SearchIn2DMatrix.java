@@ -35,7 +35,7 @@ class Solution { // Better Approach
         return false;
     }
 }
-//Time complexity : O(n+logn) why not * because logn means while loop only executing one time and if condition is true
+//Time complexity : O(n+logm) why not * because logm means while loop only executing one time and if condition is true and only on columns.
 
 class Solution {    //Optimal Approach
     public boolean searchMatrix(int[][] matrix, int target) {
