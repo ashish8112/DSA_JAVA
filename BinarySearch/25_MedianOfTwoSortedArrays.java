@@ -102,7 +102,7 @@ class Solution {  //Optimal Solution
 // low = mid + 1
 
 
-// Why left1 > Right2 ? 
+// Why left1 > Right2 ? || we check to choose the cut in nums1 (1st array) so that accordingly small or large cut get's in nums2 array
 // Because we already know left side array including (both nums1 and nums2 left side with cut) is larger than right side array.
 // We check one if left1 > right2 that means we need to shift our cut partition in left side and move and push larger values in right side. 
 // If (left1 > right2) fails that means may be both left1 and left2 is equall(==)(left1==right2) or larger values is found in left2
