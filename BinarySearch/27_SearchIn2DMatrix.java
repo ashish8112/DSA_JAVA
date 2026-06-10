@@ -57,6 +57,7 @@ class Solution {    //Optimal Approach
     }
 }
 
+//Pattern : Binary Search on 2D Matrix  Virtual 1D Index
 // Think of 2d matrix as virtual entire 1d matrix
 // example [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 3
             // 1  3  5  7  10  11  16  20  23  30  34  60 
