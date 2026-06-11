@@ -60,6 +60,7 @@ class Solution {  //Optimal Solution
     }
 }
 
+//Pattern: Binary Search on Partition
 // Step 1: Take smaller array to determine search space → smallest array
 
 // Step 2: Initialize low = 0, high = nums1.length (not -1)
