@@ -24,6 +24,7 @@ class Solution { //Optimal Approach
       return -1;
     }
 }
+//Pattern: Binary Search on Partition - Kth Element of 2 sorted Arrays
 //Approach : Creating the parition in both array such like k elements are in left and remaining elements are right 
 //Used same logic of median of two sorted array where half element are in left and another half element are in right 
 // there we would find cut1 = x and cut2 = (arr1+arr2)/2 - cut1 why because we wanted half in left side total/2 is half and if x is from first array then half-x in second array for left 
