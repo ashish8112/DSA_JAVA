@@ -33,16 +33,16 @@ class Solution { // Better Approach
 
 class Solution { // Optimal Approach 
     public boolean searchMatrix(int[][] matrix, int target) {
-        int i=0;
-        int j=matrix[0].length-1;
-        while(i<matrix.length&&j>=0)
+        int row=0;
+        int col=matrix[0].length-1;
+        while(row<matrix.length&&col>=0)
         {
-            if(matrix[i][j]==target)
+            if(matrix[row][col]==target)
             return true;
-            else if(matrix[i][j]<target)
-            i++;
+            else if(matrix[row][col]<target)
+            row++;
             else
-            j--;
+            col--;
         }
         return false;
     }
