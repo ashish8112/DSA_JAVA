@@ -1,4 +1,4 @@
-class Solution {
+class Solution { //Optimal 
     public int getSum(int a, int b) {
        while(b!=0)
         {
