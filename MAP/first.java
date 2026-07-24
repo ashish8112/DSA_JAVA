@@ -1,4 +1,10 @@
 import java.util.*;
+// Operation	ArrayList	HashMap	HashSet
+// add / put	O(1)*	      O(1)	   O(1)
+// get	      O(1)	      O(1)	   nahi hota
+// contains	   O(n)	Key:O(1),Value:O(n)	O(1)
+// remove	   O(n)	      O(1)	   O(1)
+// size	      O(1)	      O(1)	   O(1)
 class first{
    public static void main(String[] args) {
     HashMap<Integer,String> map = new HashMap<>();
