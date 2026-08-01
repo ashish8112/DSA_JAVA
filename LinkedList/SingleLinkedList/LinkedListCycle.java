@@ -37,6 +37,10 @@ public class Solution { //Optimal Tortoise method
       return false;
     }
 }
-
+//Tortoise Method using two pointer 
 //TIme complexity =o(n) becuase of if there is no cycle fast pointer will traverse entire linkedlist in n/2 but if there is cycle slow==fast in o(n) time means maximum 
 //n time loop will execute and then we we will get our cycle
+
+//Question : Is cycle exist to be noted cycle starting point is that from where again connection loop is start or where tail.next point that starting point of cycle 
+//In our approach fast and slow can be meet anywhere in nodes not at tail or starting point cycle mandatory it can be there but no fixed because cycle can be start from anywhere of nodes
+
