@@ -32,3 +32,20 @@ class Solution { //using stack
         return list;
     }
 }
+
+class Solution { //using recursion
+     public static List<Integer> traverse(TreeNode root,List<Integer> list)
+    {
+        if(root==null)
+        return list;
+        traverse(root.left,list);
+        list.add(root.val);
+        traverse (root.right,list);
+        return list;
+    }
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+        traverse(root,list);
+        return list;
+    }
+}
