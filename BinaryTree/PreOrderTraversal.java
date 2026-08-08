@@ -13,7 +13,25 @@
  *     }
  * }
  */
-class Solution {
+
+class Solution { //Brute Force using stack
+    public List<Integer> preorderTraversal(TreeNode root) {
+        Stack<TreeNode>stack = new Stack<>();// we will use stack to store nodes address/refernce
+        List<Integer> list = new ArrayList<>();
+        if(root!=null)
+        stack.push(root);
+        while(!stack.isEmpty())
+        {
+            TreeNode node = stack.pop();
+            list.add(node.val);
+            if(node.right!=null)stack.push(node.right);
+            if(node.left!=null)stack.push(node.left);
+        }
+        return list;
+    }
+}
+
+class Solution { //Optimal using recursion
     public static List<Integer> traverse(TreeNode root,List<Integer> list)
     {
         if(root==null)
