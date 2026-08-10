@@ -49,3 +49,39 @@ public class Solution { //Brtue force because of space complexity o(n+m)
         return null;
     }
 }
+
+public class Solution { // Better 
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        int count1=0,count2=0;
+        ListNode t1=headA;
+        ListNode t2 = headB;
+        while(t1!=null){
+            count1++;
+            t1=t1.next;
+        }
+        while(t2!=null){
+            count2++;
+            t2=t2.next;
+        }
+        ListNode slow = headA;
+        ListNode fast = headB;
+        if(count1<count2)
+        {   
+            for(int i=0;i<count2-count1;i++)
+            fast=fast.next;
+        }
+        else{
+            for(int i=0;i<count1-count2;i++)
+            slow=slow.next;
+        }
+        
+        while(slow!=fast)
+        {
+            if(slow==fast)
+            return slow;
+            slow=slow.next;
+            fast=fast.next;
+        }
+        return slow;
+    }
+}
