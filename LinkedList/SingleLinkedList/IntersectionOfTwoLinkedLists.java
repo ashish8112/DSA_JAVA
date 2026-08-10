@@ -85,6 +85,8 @@ public class Solution { // Better
         return slow;
     }
 }
+//Time complexity = o(n) + o(m) + o(maxlength-minlength) + o(length of smallest) = o(n+m+(m-n) + o(n) ) = > o(n+2m) = o(n+m) 
+//space complexity = o(1)
 
 public class Solution { //Optimal
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
@@ -102,3 +104,35 @@ public class Solution { //Optimal
         return t1;
     }
 }
+
+//Suppose I am A and my friend is B we have to climb stairs, but A has 5 stairs to climb and B has 7 stairs to climb 
+//Imaginde top of both staris are same but bottom both stairs are according to length of each startis 
+        A        B
+        A        B
+        A        B
+        A        B
+        A        B
+                 B
+                 B
+
+// we both friend starts climbing from botthom but both will start from there own stairs rule is that if you reach at top of your stairs you need to jump to ground and start 
+//climping from botthom of another friend 
+//so A climbed it's all stairs 5  and B is at is on 5th staris now A will jumb and start climbing from B stairs and B will continue it's own stairs 
+//now A is at 1st stair of B and B is at it's own 6 th stair one step more A is  at 2nd stair of B and B is at 7stair of it's own now B completed it's stair now he will jump 
+// to gorund and start climbing B staris now B is at 1st stair of A and A is 3rd stair of B means now they are parallel to each other 
+
+                    A        B
+                    A        B
+                    A        B
+                    A        B
+  B is here ->      A        B <- A is here 
+                             B
+                             B
+
+        that's what we need in linkedlist to make them traverse individual together if they have intersection they will meet at intersection after starting traversing 
+        parallel
+
+//Timme complexity = o(m+n) because we have to traverse both list if both have same length and don't intersect they are parallel automatic so will meet at null 
+            // and if not same length and don't intesect also then they will be parallel after going to each other list and will automatic will meet at null
+            // if intersection is there they meet so worst case will be o(length  of 1st list + length of 2nd list)
+//space complexity = o(1)
