@@ -12,10 +12,9 @@ Final year CS student. Placement prep. Strong C/C++ base, learning DSA patterns 
 | Strings | 13 | Completed |
 | HashMap | 4 | Completed |
 | Binary Search | 27 | Completed |
-| HashSet | - | Remaining |
 | Stack / Queue | - | Remaining |
 | Recursion | - | Remaining |
-| LinkedList | - | Remaining |
+| LinkedList | 9 | OnGoing |
 | Trees | - | Remaining |
 | Graphs | - | Remaining |
 | DP | - | Remaining |
