@@ -4,7 +4,7 @@ Final year CS student. Placement prep. Strong C/C++ base, learning DSA patterns 
 
 ## Progress
 
-**Total: 91 problems solved**
+**Total: 107 problems solved**
 
 | Topic | Count | Status |
 |-------|-------|--------|
