@@ -14,7 +14,7 @@ Final year CS student. Placement prep. Strong C/C++ base, learning DSA patterns 
 | Binary Search | 27 | Completed |
 | Stack / Queue | - | Remaining |
 | Recursion | - | Remaining |
-| LinkedList | 9 | OnGoing |
+| LinkedList | 10 | OnGoing |
 | Trees | - | Remaining |
 | Graphs | - | Remaining |
 | DP | - | Remaining |
