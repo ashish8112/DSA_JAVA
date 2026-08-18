@@ -1,6 +1,6 @@
 # DSA with Java
 
-Final year CS student. Placement prep. Strong C/C++ base, learning DSA patterns in Java.
+Final year MCA student. Placement prep. Strong C/C++ base, learning DSA patterns in Java.
 
 ## Progress
 
