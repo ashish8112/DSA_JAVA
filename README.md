@@ -14,7 +14,7 @@ Final year MCA student. Placement prep. Strong C/C++ base, learning DSA patterns
 | Binary Search | 27 | Completed |
 | Stack / Queue | - | Remaining |
 | Recursion | - | Remaining |
-| LinkedList | 10 | OnGoing |
+| LinkedList | 11 | OnGoing |
 | Binary Trees | 4 | OnGoing |
 | Graphs | - | Remaining |
 | DP | - | Remaining |
