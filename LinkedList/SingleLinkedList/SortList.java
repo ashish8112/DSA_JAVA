@@ -64,7 +64,8 @@ class Solution { //Using MegeSort
     }
 }
 
-//Time complexity =   O(logn) for recursion * o(n) for merging + o(n/2) for finding middle because merging and finding middle is done enitrely n time for list = o(logn(n+n/2)) = o(nlogn)
+//Time complexity =  at each recursion level, finding the middle + merging cose o(n) total because o(n) + o(n/2) 
+//O(logn) for recursion * o(n) for merging + o(n/2) for finding middle because merging and finding middle is done enitrely n time for each recursion list = o(logn(n+n/2)) = o(nlogn)
 //space complexity = O(1)
 
 //Idea is simple find middle of linked list which makes two list left list and right list make sure after finding middle make sure left linked list is pointing to null at the end 
