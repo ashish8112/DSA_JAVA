@@ -63,3 +63,11 @@ class Solution { //Using MegeSort
         return mergeSort(head);
     }
 }
+
+//Time complexity =   O(logn) for recursion * o(n) for merging + o(n/2) for finding middle because merging and finding middle is done enitrely n time for list = o(logn(n+n/2)) = o(nlogn)
+//space complexity = O(1)
+
+//Idea is simple find middle of linked list which makes two list left list and right list make sure after finding middle make sure left linked list is pointing to null at the end 
+// perform breaking till left or right become single node linked list and then perform merging by taking one dummy linked list and connect the left and right list with dummy 
+//in sorting order 
+
