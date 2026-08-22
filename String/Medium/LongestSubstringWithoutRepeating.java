@@ -53,3 +53,52 @@ class Solution { // Brute force
         return max;
     }
 }
+
+class Solution { // Better
+    public int lengthOfLongestSubstring(String s) {
+        if(s.length()==0)
+        return 0;
+        int maxLength =1;
+        int i=0;
+        while (i<s.length())
+        {
+            Map<Character,Integer>map = new HashMap<>();
+            int j=i;
+            while(j<s.length()&&!map.containsKey(s.charAt(j)))
+            {
+                map.put(s.charAt(j),j++);
+            }
+            maxLength= Math.max(maxLength,j-i);
+            if(j<s.length())
+            {
+                 i=map.get(s.charAt(j))+1;
+            }
+           
+            else break;
+        }
+        return maxLength;
+    }
+}
+
+//Time complexity = o(n) // confustion
+//Space Complexity = o(n) // confusion 
+
+class Solution { //Better 
+    public int lengthOfLongestSubstring(String s) {
+        HashMap<Character,Integer> map = new HashMap<>();
+        int maxLength=0;
+        int left =0;//starting of window 
+        for(int j=0;j<s.length();j++)
+        {
+            if(map.containsKey(s.charAt(j))&&map.get(s.charAt(j))>=left)//means it is in window
+            {
+                left=map.get(s.charAt(j))+1;// mmove left to new window 
+            }
+            map.put(s.charAt(j),j);
+            maxLength= Math.max(maxLength,(j-left+1));
+        }
+            return maxLength;
+    }
+}
+//Time complexity = o(n) 
+// Space complexity = o(min(n,256)) 
