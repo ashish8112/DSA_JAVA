@@ -28,6 +28,28 @@ class Solution { // Brute force
             max=Math.max(count,max);
             j++;
         }
+
+        class Solution { // Brute but better than above for readiblity 
+    public int lengthOfLongestSubstring(String s) {
+        int maxLength =0;
+        for(int i=0;i<s.length();i++)
+        {
+            int [] freq = new int [256];
+            for(int j=i;j<s.length();j++)
+            {
+                if(freq[s.charAt(j)]==1)
+                break;
+                freq[s.charAt(j)]++;
+                maxLength=Math.max(maxLength,(j-i+1));
+            }
+            if(maxLength==s.length())
+                return s.length();
+        }
+        return maxLength;
+    }
+}
+//Time Complexity = O(n*n) , space complexity = o(256) = o(1)
+
         return max;
     }
 }
