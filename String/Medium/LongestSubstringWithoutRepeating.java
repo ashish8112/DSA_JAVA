@@ -1,4 +1,4 @@
-class Solution { // Brute force 
+class Solution { //Brute
     public int lengthOfLongestSubstring(String s) {
         if(s.length()==0)
         return 0;
@@ -28,6 +28,9 @@ class Solution { // Brute force
             max=Math.max(count,max);
             j++;
         }
+        return max;
+    }
+}
 
         class Solution { // Brute but better than above for readiblity 
     public int lengthOfLongestSubstring(String s) {
@@ -80,8 +83,8 @@ class Solution { // Better
     }
 }
 
-//Time complexity = o(n) // confustion
-//Space Complexity = o(n) // confusion 
+//Time complexity = o(n) because inner loop can run most at 256 times
+//Space Complexity = O(min(n,256)) = O(1)
 
 class Solution { //Better 
     public int lengthOfLongestSubstring(String s) {
@@ -102,3 +105,25 @@ class Solution { //Better
 }
 //Time complexity = o(n) 
 // Space complexity = o(min(n,256)) 
+
+class Solution { // Optimal 
+    public int lengthOfLongestSubstring(String s) {
+        int [] lastIndex = new int [256];
+        Arrays.fill(lastIndex,-1);//o(256);
+        int maxLength=0;
+        int left =0;//starting of window 
+        for(int j=0;j<s.length();j++)
+        {
+            if(lastIndex[s.charAt(j)]>=left)//because left start from 0 means, this condition tells it is seen and inside the window , suppose left is 2 and index of specific value is 1 means that is not in window but seen before so we don't need to change window both case handle efficiently like if(map.containsKey(s.charAt(j))&&map.get(s.charAt(j))>=left)
+            {
+                left=lastIndex[s.charAt(j)]+1;
+            }
+            lastIndex[s.charAt(j)]=j;
+            maxLength= Math.max(maxLength,(j-left+1));
+        }
+            return maxLength;
+    }
+}
+//Time complexity = o(n)
+// Space complextiy = o(256) 
+//Pattern : Last Index and window using two pointer
