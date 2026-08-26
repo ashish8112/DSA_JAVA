@@ -35,7 +35,7 @@ class Solution { // Brute force
 //TIme complexity = o(nlogn)
 //Space Complexity = o(n) 
 
-class Solution { //Optimal 
+class Solution { //Optimal Approach
     public int[] topKFrequent(int[] nums, int k) {
         HashMap<Integer,Integer>map = new HashMap<>();
         for(int i=0;i<nums.length;i++)
@@ -50,7 +50,7 @@ class Solution { //Optimal
         }
         for(int i:map.keySet()){
             int freq = map.get(i);
-            frequencyArray[freq].add(i);
+            frequencyArray[freq].add(i); //because array index nums[i] but instead we do nums[i].add(x) becuase nums[i] become object name see in above loop
         }
         int [] ans = new int [k];
         int index =0;
