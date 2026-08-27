@@ -35,17 +35,7 @@ class Solution { // Brute Approach
 //Time complexity = o(n) + o(nlogn) + o(n) = o(nlogn) 
 //Space compelxity = o(n) + o(n) = o(n) 
 
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
-class Solution { //Better Approach 
+class Solution { //Optimal Aprroach
     ListNode mergeSort(ListNode [] lists,int low , int high)
     {
         if(low>=high)
@@ -53,22 +43,22 @@ class Solution { //Better Approach
         int mid = low+(high-low)/2;
         ListNode left = mergeSort(lists,low,mid);
         ListNode right = mergeSort(lists,mid+1,high);
-        return merge(lists,left,right);
+        return merge(left,right);
     }
-    ListNode merge(ListNode [] lists,ListNode left,ListNode right)
+    ListNode merge(ListNode left,ListNode right)
     {
-        ListNode prev = new ListNode();
+        ListNode dummyHead = new ListNode();
         ListNode sorted = prev;
         while(left!=null&&right!=null)
         {
             if(left.val<=right.val)
             {
-                sorted.next = new ListNode(left.val);
+                sorted.next = left;
                 sorted=sorted.next;
                 left=left.next;
             }
             else{
-                sorted.next = new ListNode(right.val);
+                sorted.next = right;
                 sorted = sorted.next;
                 right =right.next;
             }
@@ -77,7 +67,7 @@ class Solution { //Better Approach
         sorted.next=left;
         else
         sorted.next=right;
-        return prev.next;
+        return dummyHead.next;
     }
     public ListNode mergeKLists(ListNode[] lists) {
         if(lists.length<1)
@@ -86,5 +76,5 @@ class Solution { //Better Approach
     }
 }
 
-//Time Complexity = o(nlogk)
-//Space complexity = o(n)
+//Time Complexity = o(n log k) 
+// Space Complexity = o(log k) because of recursion stack
