@@ -4,7 +4,7 @@ Final year MCA student. Placement prep. Strong C/C++ base, learning DSA patterns
 
 ## Progress
 
-**Total: 112 problems solved**
+**Total: 114 problems solved**
 
 | Topic | Count | Status |
 |-------|-------|--------|
@@ -15,7 +15,7 @@ Final year MCA student. Placement prep. Strong C/C++ base, learning DSA patterns
 | Stack / Queue | - | Remaining |
 | Recursion | - | Remaining |
 | LinkedList | 12 | OnGoing |
-| Binary Trees | 4 | OnGoing |
+| Binary Trees | 6 | OnGoing |
 | Graphs | - | Remaining |
 | DP | - | Remaining |
 
