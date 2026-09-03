@@ -59,15 +59,15 @@ class Solution { // Brute force
 class Solution { // Optimal Approach 
     public int index = 0;
     Map <Integer,Integer> map = new HashMap<>();
-    public TreeNode build(int start , int end,int [] preorder,int [] inorder)
+    public TreeNode build(int start , int end,int [] preorder)
     {
         if(start>end)
         return null;
         TreeNode root = new TreeNode (preorder[index]);
         int rootPositionInInorder = map.get(preorder[index]);
         index++;
-        root.left = build(start,rootPositionInInorder-1,preorder,inorder);
-        root.right = build(rootPositionInInorder+1,end,preorder,inorder);
+        root.left = build(start,rootPositionInInorder-1,preorder);
+        root.right = build(rootPositionInInorder+1,end,preorder);
         return root;
     }
     public TreeNode buildTree(int[] preorder, int[] inorder ) {
@@ -75,10 +75,36 @@ class Solution { // Optimal Approach
         map = new HashMap<>();
         for(int i=0;i<inorder.length;i++)
         map.put(inorder[i],i);
-        TreeNode root = build(0,preorder.length-1,preorder,inorder);
+        TreeNode root = build(0,preorder.length-1,preorder);
         return root;
     }
 }
 
 //Time complexity = o(n) 
-//Space complexity = o(n+n) = o(2n) = o(n) // one for map and another for recursion stack
+//Space complexity = o(n+h) = o(n) // one for map and another for recursion stack
+
+/*
+Pattern: Tree Construction from Two Traversals (Preorder + Inorder)
+Trigger: Do traversal arrays se unique binary tree banana ho
+Template:
+    map = {inorder value -> index}
+    index = 0   // global pointer into preorder
+    build(start, end):
+        if (start > end) return null
+        root = new TreeNode(preorder[index])
+        pos = map.get(preorder[index])
+        index++                              // left call se PEHLE
+        root.left  = build(start, pos-1)
+        root.right = build(pos+1, end)
+        return root
+Key Insights:
+1) Preorder ka current element hamesha current subtree ka root hai
+2) Inorder mein us root ke LEFT ka sab left subtree, RIGHT ka sab right subtree
+3) index ko CALCULATE mat karo sequentially consume karo. Recursion ka order (root→left→right) preorder ke order se exactly match karta hai, isliye pointer khud sync rehta hai
+4) index++ left call se pehle hona zaroori — warna dono children same index padhenge
+5) start > end matlab empty subtree → null, aur us call mein index touch nahi hota
+6) HashMap se inorder position O(1) — bina iske har call linear search karti aur O(n²) ban jaata
+7) buildTree mein index aur map reset karna zaroori — judge multiple test cases same object pe chalata hai
+Complexity: Brute  Time O(n²), Space O(h)
+            Optimal Time O(n), Space O(n) map + O(h) stack
+*/
