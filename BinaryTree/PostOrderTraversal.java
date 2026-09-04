@@ -13,7 +13,7 @@
  *     }
  * }
  */
-class Solution { //using recursion
+class SolutionRecursive { //using recursion
      public static List<Integer> traverse(TreeNode root,List<Integer> list)
     {
         if(root==null)
@@ -30,7 +30,34 @@ class Solution { //using recursion
     }
 }
 
-class Solution { //  using stack with root->right->left trick and then reverse
+//Time Complexity = o(n);
+//Space Compelxity = o(h);
+
+class SolutionTwoStack { //Using two stack 
+    public List<Integer> postorderTraversal(TreeNode root) {
+        if(root==null)
+        return new ArrayList<>();
+        List<Integer>list = new ArrayList<>();
+        Stack<TreeNode>stack = new Stack<>();
+        Stack<Integer>result = new Stack<>();
+        stack.push(root);
+        while(!stack.isEmpty())
+        {
+            TreeNode temp = stack.pop();
+            result.push(temp.val);
+            if(temp.left!=null)stack.push(temp.left);
+            if(temp.right!=null)stack.push(temp.right);
+        }
+        while(!result.isEmpty())
+        list.add(result.pop());
+        return list;
+    }
+}
+
+//Time Complexity = o(n+n) = o(n) 
+//Space Complexity = O(n) for result stack + o(h) for main stack = O(n+h) = o(n)
+
+class Solution { //  using stack with root->right->left trick and then reverse and it is similar to upper one instead of adding to stack we directly adding to list and reversing (stack.pop())
     public List<Integer> postorderTraversal(TreeNode root) {
         Stack<TreeNode> stack = new Stack<>();
         List<Integer>list = new ArrayList<>();
@@ -56,3 +83,6 @@ class Solution { //  using stack with root->right->left trick and then reverse
         return list;
     }
 }
+
+//Time complexity = o(n+n) = o(n)
+//Space complexity = o(h) 
