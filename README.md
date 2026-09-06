@@ -4,7 +4,7 @@ Final year MCA student. Placement prep. Strong C/C++ base, learning DSA patterns
 
 ## Progress
 
-**Total: 114 problems solved**
+**Total: 119 problems solved**
 
 | Topic | Count | Status |
 |-------|-------|--------|
