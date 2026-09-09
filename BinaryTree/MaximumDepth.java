@@ -13,7 +13,7 @@
  *     }
  * }
  */
-class Solution { //Optimal but using level order traversal
+class OptimalSolutionBFS { //Optimal  using level order traversal  
     public int maxDepth(TreeNode root) {
           if(root==null)
           return 0;
@@ -35,10 +35,10 @@ class Solution { //Optimal but using level order traversal
     }
 }
 
-//Time complexity = o(n) 
-//Space complexity = o(w) where w is maximum width  
+//Time complexity = O(n)  // Best in case of left-skewed tree or right-skewed tree only one element will be there always  in queue if skewed tree then also optimal then recursion 
+//Space complexity = O(w) where w is maximum width  
 
-class Solution {
+class OptimalSolutionTopToDown{
     public int maxDep(TreeNode root, int count){
         if(root==null)
         return count-1;
@@ -51,5 +51,17 @@ class Solution {
     }
 }
 
-//Time Complexity = o(n)
-//Space complexity = o(h)
+//Time Complexity = O(n)
+//Space complexity = O(h)
+
+class OptimalSolutionBottomToUp {
+    public int maxDepth(TreeNode root) {
+        if(root==null)
+        return 0;
+        int left = maxDepth(root.left);
+        int right = maxDepth(root.right);
+        return 1+Math.max(left,right);
+    }
+}
+//Time Complexity = O(n) 
+//Space complexity = O(h)
