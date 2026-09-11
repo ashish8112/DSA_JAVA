@@ -16,7 +16,7 @@ kyunki wo topic formally padha nahi gaya.
 - **Note:** Time same hai, space D&C se *kharaab* hai. Ye industry mein famous zyada hai, better nahi. Karne ka reason: heap ka usage samajhna, aur interview mein "aur koi approach?" ka jawab dena.
 
 ### 2. Top K Frequent Elements (LC 347)
-- **Kiya hua:** HashMap + Bucket Sort — O(n) time, O(n) space
+- **Kiya hua:** HashMap + Bucket Sort - O(n) time, O(n) space
 - **Pending:** Min-Heap of size k
   - Frequency map banao, phir har entry heap mein daalo
   - Heap size k se badi ho jaye toh smallest frequency nikaal do
@@ -28,10 +28,10 @@ kyunki wo topic formally padha nahi gaya.
 
 ## Blocked on: STACK
 
-*(Abhi tak koi solved question yahan pending nahi hai - Trees ke iterative traversals mein Stack already use kar liya hai.)*
+*(Abhi tak koi solved question yahan pending nahi hai — Trees ke iterative traversals mein Stack already use kar liya hai.)*
 
 Jab Stack formally start ho, ye pattern aayenge (ye naye questions honge, revisit nahi):
-Next Greater Element, Largest Rectangle in Histogram, Trapping Rain Water (stack approach - array approach already kiya hai prefix/suffix se)
+Next Greater Element, Largest Rectangle in Histogram, Trapping Rain Water (stack approach)
 
 **Note:** Trapping Rain Water agar Arrays mein kiya tha prefix/suffix se, toh Stack topic aane par usko stack approach se dobara attempt karna hai. — *confirm karna hai ki ye question kiya tha ya nahi*
 
@@ -39,7 +39,7 @@ Next Greater Element, Largest Rectangle in Histogram, Trapping Rain Water (stack
 
 ## Blocked on: RECURSION (formal)
 
-*(Recursion informally already use kar raha hai — Reverse LL recursive, tree traversals, Merge Sort. Formal topic aane par backtracking-based approaches khulenge.)*
+*(Recursion informally already use kar raha hai — Reverse LL recursive, tree traversals, Merge Sort, saare tree bottom-up problems. Formal topic aane par backtracking-based approaches khulenge.)*
 
 ---
 
@@ -49,19 +49,46 @@ Ye wo hain jinka optimal approach **abhi ke knowledge se ho sakta hai**, bas kiy
 
 | Question | Kiya hua | Pending |
 |---|---|---|
-| Reorder List (LC 143) | ArrayList brute — O(n) space | Middle + Reverse + Weave - O(1) space |
+| Reorder List (LC 143) | ArrayList brute — O(n) space | Middle + Reverse + Weave — O(1) space |
 | Flatten Multilevel LinkedList | Concatenate + sort — O(n log n) | Merge-based fold (Sort List ka `merge` reuse) — O(1) space |
-| Longest Repeating Character Replacement (LC 424) | Brute O(n²) | Sliding window O(n) |
+| Iterative Postorder — Rasta 2 | Two-stack aur single-stack + reverse dono kiye | Single stack + `prev` pointer, bina reverse ke. Interview-preferred version. |
+
+---
+
+## Hard Recall List
+
+Sirf wo patterns jo **2 mahine baad blank page pe, zero hints ke saath re-derive nahi kar paunga**.
+Saare solved questions nahi. Weekend pe 2–3 blind solve, 15 min each.
+
+1. **Partition Binary Search** - `cut2 = target − cut1`, MIN/MAX sentinels, hamesha chhote array pe BS
+2. **Detect Cycle II** - `L = nC − X` ka proof
+3. **Decimal BSoA** — fixed 100 iterations, `high=mid` / `low=mid`
+4. **Longest Substring Without Repeating** — stale *index* ko honestly handle karna padta hai (`>= left` check)
+5. **Longest Repeating Char Replacement** — stale *maxFreq* ko ignore karna safe hai
+6. **Top K Frequent** — bucket sort
+7. **Construct Tree from Traversals** — index consume karo, calculate mat karo. Preorder: aage se + left pehle. Postorder: peeche se + right pehle.
+8. **Intersection of Two LL** - two-pointer switch, O(1) space
+9. **Max Path Sum / Diameter** - return value ≠ answer value. Height return karo, answer accumulator me.
+
+**#4 aur #5 saath karna** — dono "stale value" wale hain par jawab **ulta** hai.
+Ye ulta yaad aane ka sabse zyada chance hai.
+
+---
+
+## Revision Schedule
+
+| Kya | Kab | Status |
+|---|---|---|
+| Binary Search — full blind revision | Overdue | Pending — sabse purana |
+| Same Tree (simultaneous recursion) | 14 Sept 2026 | 3-din blind re-attempt |
+| Hard Recall #1, #3 (Partition BS, decimal BSoA) | Agla weekend | Pending |
 
 ---
 
 ## Rules for this file
 
-1. Jab bhi koi question solve karo aur pata chale ki "iska ek aur approach hai jo abhi nahi kar sakta" - **turant yahan likho**, baad mein yaad nahi rahega
-2. Har entry mein likhna: kya kiya, kya pending, expected complexity, aur **kya pending wala actually better hai ya sirf alternative hai**
-3. Topic start hone par: pehle blind attempt, phir ye file kholo
-4. Jo approach kar liya, usko yahan se hata do aur main notes mein le jao
+Jab bhi koi question solve karo aur pata chale ki "iska ek aur approach hai jo abhi nahi kar sakta" — **turant yahan likho**, baad mein yaad nahi rahega
 
 ---
 
-*Last updated: 27 Aug 2026*
+*Last updated: 11 Sept 2026*
