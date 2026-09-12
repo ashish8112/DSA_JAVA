@@ -10,13 +10,13 @@ Sheets: **Striver A2Z** (primary) + **NeetCode 75** (parallel)
 
 ## Progress
 
-**Total: 145 problems solved**
+**Total: 147 problems solved**
 
 | Topic | Solved | Status |
 |-------|--------|--------|
 | Arrays | 55 | Completed |
 | Binary Search | 32 | Completed |
-| LinkedList | 23 | Near complete |
+| LinkedList | 25 | Completed |
 | Strings | 12 | Completed |
 | Binary Trees | 12 | Ongoing |
 | Math | 8 | Completed |
