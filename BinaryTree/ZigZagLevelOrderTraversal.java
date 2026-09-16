@@ -39,7 +39,7 @@ class Solution {
         boolean reverse = false;
         while(!q.isEmpty())
         {
-            List<Integer>inList = new LinkedList<>(); // addFirst on List needs Java 21+ 
+            List<Integer>inList = new LinkedList<>(); // addFirst on List needs Java 21+ compiler
             int size = q.size();
             for(int i=0;i<size;i++)
             {
