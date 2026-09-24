@@ -1,4 +1,4 @@
-class Solution {
+class BetterSolution {
     public void generate(StringBuilder str,List<String>list,int n)
     {
      if(str.length()==n*2)
@@ -40,3 +40,23 @@ class Solution {
     }
 }
 
+class OptimalSolution {
+    void generate(List<String>list,int n ,int i,int j,String str)
+    {
+        if(i+j==n*2)
+        {
+            list.add(str);
+            return;
+        }
+        if(i<n)
+        generate(list,n,i+1,j,str+"(");
+
+        if(j<i)
+        generate(list,n,i,j+1,str+")");
+    }
+    public List<String> generateParenthesis(int n) {
+        List<String> paraenthesis = new ArrayList<>();
+        generate(paraenthesis,n,0,0,"");
+        return paraenthesis;
+    }
+}
