@@ -40,7 +40,7 @@ class BetterSolution {
     }
 }
 
-class OptimalSolution {
+class BetterSolution {
     void generate(List<String>list,int n ,int i,int j,String str)
     {
         if(i+j==n*2)
@@ -57,6 +57,36 @@ class OptimalSolution {
     public List<String> generateParenthesis(int n) {
         List<String> paraenthesis = new ArrayList<>();
         generate(paraenthesis,n,0,0,"");
+        return paraenthesis;
+    }
+}
+
+class OptimalSolution {
+    void generate(List<String>list,int n ,int i,int j,StringBuilder str)
+    {
+        if(i+j==n*2)
+        {
+            list.add(str.toString());
+            return;
+        }
+        if(i<n)
+        {
+            str.append('(');
+            generate(list,n,i+1,j,str);
+            str.deleteCharAt(str.length()-1);
+        }
+        
+        if(j<i)
+        {
+            str.append(')');
+            generate(list,n,i,j+1,str);
+            str.deleteCharAt(str.length()-1);
+        }
+    }
+    public List<String> generateParenthesis(int n) {
+        List<String> paraenthesis = new ArrayList<>();
+        StringBuilder str = new StringBuilder();
+        generate(paraenthesis,n,0,0,str);
         return paraenthesis;
     }
 }
