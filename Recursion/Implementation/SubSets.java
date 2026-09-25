@@ -75,3 +75,56 @@ Key Insights:
 Complexity: Time O(2^n * n)  - 2^n subsets, har ek O(n) copy
             Space O(n)       - recursion depth, output ko auxiliary nahi ginte
 */
+
+
+
+class CascadingSolution { // Approach Level Order or add yourselves means current value with all previous pair and make new pair that is what subset is called.
+    public List<List<Integer>> subsets(int[] nums) {
+        List<List<Integer>>list = new ArrayList<>();
+        list.add(new ArrayList<>());
+        for(int i=0;i<nums.length;i++)
+        {
+            int size = list.size();
+            for(int j=0;j<size;j++)//subset means add current num value with every previous value
+            {
+                List<Integer>currentValue = new ArrayList<>(list.get(j));
+                currentValue.add(nums[i]);
+                list.add(currentValue);
+            }
+        }
+        return list;
+    }
+}
+
+// Time complexity = O(2^n * n)
+// Space complexity (auxiliary) = O(1) - no recursion stack, unlike backtracking version
+
+/*
+Pattern: Cascading (Iterative Power Set Doubling)
+
+Trigger: Subsets/power set chahiye, bina recursion ke.
+
+Template:
+    list.add(new ArrayList<>());              // empty subset se shuru
+    for (int num : nums) {
+        int size = list.size();                // SNAPSHOT - zaroori hai
+        for (int j = 0; j < size; j++) {
+            List<Integer> copy = new ArrayList<>(list.get(j));
+            copy.add(num);
+            list.add(copy);
+        }
+    }
+
+Key Insights:
+1) size = list.size() loop se PEHLE zaroori hai - warna naye add hue
+   subsets pe bhi loop chalega, infinite growth. Yahi discipline
+   BFS ke q.size() snapshot jaisi hai.
+2) Har number pe list DOUBLE hoti hai - purane sab subsets ka copy
+   banao, naya number jodo, list me add karo. 1 -> 2 -> 4 -> 8...
+3) Backtracking se time complexity same hai (O(2^n * n)), par
+   auxiliary space behtar hai - koi recursion stack nahi lagta,
+   list khud hi seedha badhti hai.
+
+Complexity: Time O(2^n * n)
+            Space (auxiliary) O(1) - recursion nahi, sirf output list badhti hai
+*/
