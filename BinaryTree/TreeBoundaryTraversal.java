@@ -1,14 +1,3 @@
-/* Node Structure
-class Node {
-    int data;
-    Node left, right;
-
-    Node(int val) {
-        data = val;
-        left = right = null;
-    }
-} */
-
 class Solution {
     public void leftTree(Node root,ArrayList<Integer>list)
     {
