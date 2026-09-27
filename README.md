@@ -10,7 +10,7 @@ Sheets: **Striver A2Z** (primary) + **NeetCode 75** (parallel)
 
 ## Progress
 
-**Total: 149 problems solved**
+**Total: 150 problems solved**
 
 | Topic | Solved | Status |
 |-------|--------|--------|
@@ -23,7 +23,7 @@ Sheets: **Striver A2Z** (primary) + **NeetCode 75** (parallel)
 | Sliding Window | 2 | Ongoing |
 | Binary Search Tree | 1 | Just started |
 | Stack / Queue | — | Remaining |
-| Recursion (formal) | — | Remaining |
+| Recursion (formal) | 3 | Remaining |
 | Heaps | — | Remaining |
 | Bit Manipulation | — | Remaining |
 | Greedy | — | Remaining |
