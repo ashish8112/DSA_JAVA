@@ -21,7 +21,7 @@ Sheets: **Striver A2Z** (primary) + **NeetCode 75** (parallel)
 | Binary Trees | 14 | Ongoing |
 | Math | 8 | Completed |
 | Sliding Window | 2 | Ongoing |
-| Binary Search Tree | 1 | Just started |
+| Binary Search Tree | 2 | Just started |
 | Stack / Queue | — | Remaining |
 | Recursion (formal) | 3 | Remaining |
 | Heaps | — | Remaining |
