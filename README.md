@@ -23,7 +23,7 @@ Sheets: **Striver A2Z** (primary) + **NeetCode 75** (parallel)
 | Sliding Window | 2 | Ongoing |
 | Binary Search Tree | 2 | Just started |
 | Stack / Queue | — | Remaining |
-| Recursion (formal) | 3 | Remaining |
+| Recursion (formal) | 4 | Remaining |
 | Heaps | — | Remaining |
 | Bit Manipulation | — | Remaining |
 | Greedy | — | Remaining |
