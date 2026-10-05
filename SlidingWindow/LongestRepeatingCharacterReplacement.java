@@ -95,7 +95,7 @@ class BetterSolutionV2 { //Better Solution Without Map
 
 class OptimalSolution {
     public int characterReplacement(String s, int k) {
-        int maxLength =0; // we can remove this why read why we don't need to change maxFreq in below 
+        int maxLength =0; // we can remove this, to understand why read below comment 
         int maxFreq = 0;
         int [] freqArray = new int [26];
         int left=0;
