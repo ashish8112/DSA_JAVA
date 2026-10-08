@@ -1,4 +1,4 @@
-class Solution {
+class BetterSolution {
         int [] check (Node root)
         {
             if(root==null)
@@ -22,3 +22,13 @@ class Solution {
 }
 // Time Complexity: O(n)
 // Space Complexity: O(h)
+
+class OptimalSolution {
+    public boolean isSumProperty(Node root) {
+        if(root==null || (root.left==null && root.right ==null))
+        return true;
+        int left = (root.left==null) ? 0 : root.left.data;
+        int right = (root.right==null) ? 0: root.right.data;
+        return (left+right) == root.data && isSumProperty(root.left) && isSumProperty(root.right);
+    }
+}
