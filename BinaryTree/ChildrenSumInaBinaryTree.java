@@ -32,3 +32,6 @@ class OptimalSolution {
         return (left+right) == root.data && isSumProperty(root.left) && isSumProperty(root.right);
     }
 }
+// Time Complexity: O(n)
+// Space Complexity: O(h)
+
