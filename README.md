@@ -47,7 +47,7 @@ LinkedList/        SingleLinkedList · DoubleLinkedList
 SlidingWindow/
 MAP/               HashMap ke notes aur experiments
 Math/
-Recursion/
+Recursion/         Easy-Basic · Medium
 Sorting/           Bubble · Insertion · Selection · Quick · Merge
 Stack/
 Pattern_Star/
