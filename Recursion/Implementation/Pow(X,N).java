@@ -38,3 +38,25 @@ class Solution { //Optimal Approach
 }
 //Time Complexity = O(log n) => power is getting half everytime and recursive method is called only log (pow time) 
 //Space complexity = O(log n) => because recursion stack
+
+class Solution { // Iterative Approach
+    public double myPow(double x,int n){
+        long N = n;
+        if(N<0)
+            N=-N;
+
+        double result = 1.0;
+        double product = x;
+
+        while(N>0)
+            {
+                if(N%2!=0)
+                    result*=product;
+                product*=product;
+                N/=2;
+            }
+        return n<0 ? 1.0/result : result;
+    }
+}
+//Time complexity = O(log n)
+//Space complexity = O(1)
