@@ -20,3 +20,32 @@ class Solution {
 }
 //Time complexity = O(log n)
 //Space complexity = O(log n)
+
+
+class Solution { // Same But Instead of Recursion used iterative for exponent
+     public long myPow(long x,long N) {
+        if(N==0||x==1)
+        return 1;
+        final long MOD = (long)(1e9+7);
+        long currentProduct = x,answer =1;
+        while(N>0)
+        {
+            if(N%2!=0)
+            answer = (answer*currentProduct)%MOD;
+            currentProduct=(currentProduct*currentProduct)%MOD;
+            N/=2;
+        }
+        return answer;
+    }
+    public int countGoodNumbers(long n) {
+        final long MOD = (long)(1e9+7);
+        long even = (n+1)/2;
+        long odd = n - even;
+        even = myPow(5,even);
+        odd = myPow(4,odd);
+        return (int)((even*odd)%MOD);
+    }
+}
+
+// Time complexity : O(log n)
+// Space complexity : O(1)
