@@ -80,7 +80,6 @@ Ye ulta yaad aane ka sabse zyada chance hai.
 | Kya | Kab | Status |
 |---|---|---|
 | Binary Search — full blind revision | Overdue | Pending — sabse purana |
-| Same Tree (simultaneous recursion) | 14 Sept 2026 | 3-din blind re-attempt |
 | Hard Recall #1, #3 (Partition BS, decimal BSoA) | Agla weekend | Pending |
 
 ---
