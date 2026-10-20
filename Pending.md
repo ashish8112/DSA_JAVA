@@ -37,12 +37,6 @@ Next Greater Element, Largest Rectangle in Histogram, Trapping Rain Water (stack
 
 ---
 
-## Blocked on: RECURSION (formal)
-
-*(Recursion informally already use kar raha hai — Reverse LL recursive, tree traversals, Merge Sort, saare tree bottom-up problems. Formal topic aane par backtracking-based approaches khulenge.)*
-
----
-
 ## NOT topic-blocked — sirf pending hain
 
 Ye wo hain jinka optimal approach **abhi ke knowledge se ho sakta hai**, bas kiya nahi:
