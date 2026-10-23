@@ -10,7 +10,7 @@ class Node {
     }
 } */
 
-class Solution {
+class Solution { // Brute 
     void traversal(Node root,Map<Integer,List<int[]>>map,int row,int column)
     {
         if(root==null)
