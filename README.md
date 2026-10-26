@@ -10,7 +10,7 @@ Sheets: **Striver A2Z** (primary) + **NeetCode 75** (parallel)
 
 ## Progress
 
-**Total: 155 problems solved**
+**Total: 156 problems solved**
 
 | Topic | Solved | Status |
 |-------|--------|--------|
