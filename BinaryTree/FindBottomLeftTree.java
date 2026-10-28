@@ -13,7 +13,7 @@
  *     }
  * }
  */
-class Solution {
+class BetterSolution {
     public int findBottomLeftValue(TreeNode root) { // In 2 pass 
         Queue<TreeNode> q = new LinkedList<>();
         q.offer(root);
