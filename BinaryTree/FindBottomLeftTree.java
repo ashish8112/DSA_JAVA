@@ -49,3 +49,25 @@ class BetterSolution {
 }
 // Time Complexity - O(N)
 // Space Complexity - O(W)
+
+
+class Solution {
+    public int findBottomLeftValue(TreeNode root) { //Single Pass
+        Queue<TreeNode> q = new LinkedList<>();
+        q.offer(root);
+        int count = 0;
+        while(!q.isEmpty())
+        {
+            int size = q.size();
+            for(int i=0;i<size;i++)
+            {
+                TreeNode node = q.poll();
+                if(node.right!=null)q.offer(node.right);
+                if(node.left!=null)q.offer(node.left);
+                if(q.isEmpty())
+                return node.val;
+            }
+        }
+        return -1;
+    }
+}
