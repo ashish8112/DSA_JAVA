@@ -18,7 +18,7 @@ Sheets: **Striver A2Z** (primary) + **NeetCode 75** (parallel)
 | Binary Search | 32 | Completed |
 | LinkedList | 25 | Completed |
 | Strings | 13 | Completed |
-| Binary Trees | 17 | Ongoing |
+| Binary Trees | 18 | Ongoing |
 | Math | 8 | Completed |
 | Sliding Window | 3 | Ongoing |
 | Binary Search Tree | 2 | Just started |
