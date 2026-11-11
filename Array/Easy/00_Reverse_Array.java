@@ -30,3 +30,5 @@ import java.util.Scanner;
             System.out.print(arr[i]+" ");
     }
 }
+
+//Time Complexity: O(n)
