@@ -27,7 +27,7 @@ Sheets: **Striver A2Z** (primary) + **NeetCode 75** (parallel)
 | Heaps | — | Remaining |
 | Bit Manipulation | — | Remaining |
 | Greedy | — | Remaining |
-| Graphs | — | Remaining |
+| Graphs | 1 | Ongoing |
 | DP | — | Remaining |
 
 Alag se: **7** sorting algorithms, **22** star pattern programs, aur Java basics
