@@ -16,3 +16,6 @@ class Solution {
         return ans;
     }
 }
+
+// Time Complexity : O(V+2E) = O(V+E) , v for vertex
+// Space complexity : O(V+V) , one V for visited array and one for V for recursion in worst case where chain is largest
